@@ -12,6 +12,7 @@ describe "Successful login" do
       expect(current_path).to eq root_path
       expect(page).to have_content 'Welcome'
       expect(page).to have_link 'Logout'
+      expect(page).to_not have_link 'Login with Strava'
       expect(User.count).to eq 1
     end
   end
@@ -26,6 +27,7 @@ describe "Successful login" do
 
       expect(current_path).to eq root_path
       expect(page).to have_content "Welcome #{user.first_name}!"
+      expect(page).to_not have_link 'Login with Strava'
       expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
     end
