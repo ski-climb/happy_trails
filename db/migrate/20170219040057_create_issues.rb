@@ -7,7 +7,7 @@ class CreateIssues < ActiveRecord::Migration[5.0]
       t.text :description
       t.integer :category
       t.integer :severity
-      t.boolean :resolved
+      t.boolean :resolved, default: false
       t.float :latitude
       t.float :longitude
 
