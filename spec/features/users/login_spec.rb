@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Successful login" do
+describe "User login" do
 
   context "given the user does not exist but has a Strava account" do
     scenario "a new user signs in" do
@@ -30,6 +30,17 @@ describe "Successful login" do
       expect(page).to_not have_link 'Login with Strava'
       expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
+    end
+  end
+
+  context 'already logged in' do
+    scenario 'redirects to 404' do
+      user = create(:user)
+      stub_login(user)
+
+      visit '/auth/strava/callback'
+
+      expect(page).to have_content 404_message
     end
   end
 
