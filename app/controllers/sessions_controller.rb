@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
     redirect_to root_path, success: "Welcome #{user.first_name}!"
   end
 
+  def destroy
+    reset_session
+    redirect_to root_path, info: 'You are now logged out.'
+  end
+
   private
 
     def auth_hash
