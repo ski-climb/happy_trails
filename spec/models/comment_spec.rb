@@ -16,5 +16,16 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to belong_to :user }
     it { is_expected.to belong_to :admin }
     it { is_expected.to belong_to :issue }
+    it { is_expected.to have_many :photos }
+  end
+
+  context 'when valid' do
+    it 'saves to database' do
+      comment = create(:comment)
+      saved_comment = Comment.first
+
+      expect(Comment.count).to eq 1
+      expect(saved_comment.body).to eq comment.body
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219052754) do
+ActiveRecord::Schema.define(version: 20170219054528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 20170219052754) do
     t.datetime "updated_at",                  null: false
     t.index ["admin_id"], name: "index_issues_on_admin_id", using: :btree
     t.index ["user_id"], name: "index_issues_on_user_id", using: :btree
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.integer  "issue_id"
+    t.integer  "admin_id"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_photos_on_admin_id", using: :btree
+    t.index ["comment_id"], name: "index_photos_on_comment_id", using: :btree
+    t.index ["issue_id"], name: "index_photos_on_issue_id", using: :btree
+    t.index ["user_id"], name: "index_photos_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

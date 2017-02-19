@@ -20,6 +20,7 @@ RSpec.describe Issue, type: :model do
 
   context 'relationships' do
     it { is_expected.to have_many :comments }
+    it { is_expected.to have_many :photos }
   end
 
   context 'when valid' do
@@ -48,24 +49,28 @@ RSpec.describe Issue, type: :model do
   context '#category' do
     it '#obstacle' do
       issue = create(:issue, category: 0)
+      
       expect(issue.obstacle?).to be_truthy
       expect(issue.category).to eq 'obstacle'
     end
 
     it '#washout' do
       issue = create(:issue, category: 1)
+
       expect(issue.washout?).to be_truthy
       expect(issue.category).to eq 'washout'
     end
 
     it '#mud' do
       issue = create(:issue, category: 2)
+
       expect(issue.mud?).to be_truthy
       expect(issue.category).to eq 'mud'
     end
 
     it '#landslide' do
       issue = create(:issue, category: 3)
+
       expect(issue.landslide?).to be_truthy
       expect(issue.category).to eq 'landslide'
     end
@@ -74,18 +79,21 @@ RSpec.describe Issue, type: :model do
   context '#severity' do
     it '#low' do
       issue = create(:issue, severity: 0)
+
       expect(issue.low?).to be_truthy
       expect(issue.severity).to eq 'low'
     end
 
     it '#medium' do
       issue = create(:issue, severity: 1)
+
       expect(issue.medium?).to be_truthy
       expect(issue.severity).to eq 'medium'
     end
 
     it '#high' do
       issue = create(:issue, severity: 2)
+
       expect(issue.high?).to be_truthy
       expect(issue.severity).to eq 'high'
     end
