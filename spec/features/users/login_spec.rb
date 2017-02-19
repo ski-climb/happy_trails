@@ -33,16 +33,6 @@ describe "User login" do
     end
   end
 
-  context 'already logged in' do
-    scenario 'redirects to 404' do
-      logged_in_user
-
-      visit '/auth/strava/callback'
-
-      expect(page).to have_content unauthorized_message
-    end
-  end
-
   def login_with_strava
     OmniAuth.config.test_mode = true
     visit root_path

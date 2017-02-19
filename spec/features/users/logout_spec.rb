@@ -3,11 +3,13 @@ require 'rails_helper'
 describe 'Users logs out' do
   context 'when logged in' do
     scenario 'resets session and returns to root path' do
-      logged_in_user
+      set_session
+      visit root_path
 
       click_on 'Logout'
       expect(current_path).to eq root_path
       expect(page).to have_link 'Login with Strava'
+      expect(page.get_rack_session).to_not have_key 'user_id'
     end
   end
     
@@ -15,15 +17,7 @@ describe 'Users logs out' do
     scenario 'logout button not visible' do
       visit root_path
 
-      expect(page).to_not have_link 'Login with Strava'
-    end
-
-    context 'tries to access path directly' do
-      scenario 'redirects to 404' do
-        visit logout_path
-
-        expect(page).to have_content unauthorized_message
-      end
+      expect(page).to_not have_link 'Logout'
     end
   end
 end

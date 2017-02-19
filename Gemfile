@@ -43,6 +43,7 @@ group :development do
 end
 
 group :test do
+  gem 'rack_session_access'
   gem 'vcr'
   gem 'webmock'
   gem 'capybara-mechanize'
