@@ -6,9 +6,4 @@ FactoryGirl.define do
     last_name     { Faker::GameOfThrones.house }
     username      { Faker::Internet.user_name }
   end
-
-  trait :strava do
-    uuid    { ENV["STRAVA_ATHLETE_ID"] }
-    token   { ENV["ACCESS_TOKEN"] }
-  end
 end
