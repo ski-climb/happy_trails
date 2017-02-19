@@ -15,12 +15,18 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <%= link_to 'Add an Issue'%>
-      </li>
-      <li>
-        <%= link_to 'Login with Strava', '/auth/strava' %>
-      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to 'Add an Issue'%>
+        </li>
+        <li>
+          <%= link_to 'Logout'%>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Login with Strava', '/auth/strava' %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
