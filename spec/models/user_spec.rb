@@ -1,11 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it {is_expected.to have_db_column :first_name }
-  it {is_expected.to have_db_column :last_name }
-  it {is_expected.to have_db_column :username }
-  it {is_expected.to have_db_column :uuid }
-  it {is_expected.to have_db_column :token }
+  context 'database columns' do
+    it { is_expected.to have_db_column :first_name }
+    it { is_expected.to have_db_column :last_name }
+    it { is_expected.to have_db_column :username }
+    it { is_expected.to have_db_column :uuid }
+    it { is_expected.to have_db_column :token }
+  end
+
+  context 'relationships' do
+    it { is_expected.to have_many :issues }
+  end
 
   context 'when valid' do
     it 'successfully saves to the database' do
