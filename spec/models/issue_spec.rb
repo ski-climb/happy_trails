@@ -12,6 +12,12 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to have_db_column :longitude }
   end
 
+  context 'validations' do
+    it { is_expected.to validate_presence_of :description }
+    it { is_expected.to validate_presence_of :category }
+    it { is_expected.to validate_presence_of :severity }
+  end
+
   context 'when valid' do
     it 'successfully saves to the database' do
       issue = create(:issue)
@@ -36,7 +42,6 @@ RSpec.describe Issue, type: :model do
   end
 
   context '#category' do
-
     it '#obstacle' do
       issue = create(:issue, category: 0)
       expect(issue.obstacle?).to be_truthy
@@ -63,7 +68,6 @@ RSpec.describe Issue, type: :model do
   end
 
   context '#severity' do
-
     it '#low' do
       issue = create(:issue, severity: 0)
       expect(issue.low?).to be_truthy

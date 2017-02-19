@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20170219040057) do
     t.text     "description"
     t.integer  "category"
     t.integer  "severity"
-    t.boolean  "resolved"
+    t.boolean  "resolved",    default: false
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["admin_id"], name: "index_issues_on_admin_id", using: :btree
     t.index ["user_id"], name: "index_issues_on_user_id", using: :btree
   end
