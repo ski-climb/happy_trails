@@ -9,7 +9,8 @@ describe "Successful login" do
       login_with_strava
 
       expect(current_path).to eq issues_path
-      expect(page).to have_content "Logged in as"
+      expect(page).to have_content 'Welcome'
+      expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
     end
   end
@@ -22,7 +23,8 @@ describe "Successful login" do
       login_with_strava
 
       expect(current_path).to eq issues_path
-      expect(page).to have_content "Logged in as"
+      expect(page).to have_content "Welcome #{user.first_name}!"
+      expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
     end
   end
