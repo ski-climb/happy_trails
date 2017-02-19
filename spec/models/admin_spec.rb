@@ -10,6 +10,7 @@ RSpec.describe Admin, type: :model do
 
   context 'relationships' do
     it { is_expected.to have_many :issues }
+    it { is_expected.to have_many :comments }
   end
 
   context 'when valid' do

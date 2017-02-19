@@ -18,6 +18,10 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to validate_presence_of :severity }
   end
 
+  context 'relationships' do
+    it { is_expected.to have_many :comments }
+  end
+
   context 'when valid' do
     it 'successfully saves to the database' do
       issue = create(:issue)

@@ -3,6 +3,7 @@ class Issue < ApplicationRecord
 
   belongs_to :user, optional: true
   belongs_to :admin, optional: true
+  has_many :comments
 
   enum severity: %w(low medium high)
   enum category: %w(obstacle washout mud landslide)
