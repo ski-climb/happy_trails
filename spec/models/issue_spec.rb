@@ -21,6 +21,8 @@ RSpec.describe Issue, type: :model do
   context 'relationships' do
     it { is_expected.to have_many :comments }
     it { is_expected.to have_many :photos }
+    it { is_expected.to belong_to :user }
+    it { is_expected.to belong_to :admin }
   end
 
   context 'when valid' do
@@ -31,11 +33,6 @@ RSpec.describe Issue, type: :model do
       expect(Issue.count).to eq 1
       expect(saved_issue.title).to eq issue.title
     end
-  end
-
-  context 'relationships' do
-    it { is_expected.to belong_to :user }
-    it { is_expected.to belong_to :admin }
   end
 
   context '#resolved' do
