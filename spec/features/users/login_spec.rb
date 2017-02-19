@@ -3,12 +3,13 @@ require 'rails_helper'
 describe "Successful login" do
 
   context "given the user does not exist but has a Strava account" do
-    scenario "a new user signs in", vcr: true do
+    scenario "a new user signs in" do
       expect(User.count).to eq 0
 
+      stub_new_user_omniauth
       login_with_strava
 
-      expect(current_path).to eq issues_path
+      expect(current_path).to eq root_path
       expect(page).to have_content 'Welcome'
       expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
@@ -16,13 +17,14 @@ describe "Successful login" do
   end
 
   context "given the user exists and has a Strava account" do
-    scenario "an existing user signs in", vcr: true do
-      user = create(:user, :strava)
+    scenario "an existing user signs in" do
+      user = create(:user)
       expect(User.count).to eq 1
 
+      stub_existing_user_omniauth(user)
       login_with_strava
 
-      expect(current_path).to eq issues_path
+      expect(current_path).to eq root_path
       expect(page).to have_content "Welcome #{user.first_name}!"
       expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
@@ -30,11 +32,30 @@ describe "Successful login" do
   end
 
   def login_with_strava
-    Capybara.current_driver = :mechanize
+    OmniAuth.config.test_mode = true
     visit root_path
-    click_on "Log in with Strava"
-    fill_in "email", with: ENV["STRAVA_EMAIL"]
-    fill_in "password", with: ENV["STRAVA_PASSWORD"]
-    click_button "Log In"
+    click_on "Login with Strava"
+  end
+
+  def stub_new_user_omniauth
+    OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
+          uid:          rand(1000),
+          info:         { first_name:     Faker::Name.name,
+                          last_name:      Faker::Name.last_name,
+                          username:       Faker::Internet.user_name,
+                        },
+          credentials:  { token:          Faker::Internet.password }
+        })
+  end
+
+  def stub_existing_user_omniauth(user)
+    OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
+          uid:          user.uuid,
+          info:         { first_name:     user.first_name,
+                          last_name:      user.last_name,
+                          username:       user.username,
+                        },
+          credentials:  { token:          user.token }
+        })
   end
 end
