@@ -35,12 +35,11 @@ describe "User login" do
 
   context 'already logged in' do
     scenario 'redirects to 404' do
-      user = create(:user)
-      stub_login(user)
+      logged_in_user
 
       visit '/auth/strava/callback'
 
-      expect(page).to have_content 404_message
+      expect(page).to have_content unauthorized_message
     end
   end
 
