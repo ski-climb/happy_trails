@@ -1,13 +1,19 @@
+def logged_in_user
+  user = create(:user)
+  allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+  user
+end
+
 def set_session
   user = create(:user)
   page.set_rack_session(user_id: user.id)
 end
 
 def login_with_strava
-    OmniAuth.config.test_mode = true
-    visit root_path
-    click_on "Login with Strava"
-  end
+  OmniAuth.config.test_mode = true
+  visit root_path
+  click_on "Login with Strava"
+end
 
   def stub_new_user_omniauth
     OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
@@ -30,3 +36,4 @@ def login_with_strava
           credentials:  { token:          user.token }
         })
   end
+

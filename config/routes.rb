@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get '/auth/strava/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :issues, only: [:index]
+  resources 'issues', only: [:index, :new, :create]
 end
