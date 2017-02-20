@@ -23,9 +23,10 @@ describe 'Create issue' do
 
         click_on 'Submit Issue'
 
-        expect(current_path).to eq root_path
-
         issue = Issue.first
+
+        expect(current_path).to eq root_path
+        expect(Issue.count).to eq 1
 
         expect(page).to have_content 'Issue added.'
         expect(issue.title).to eq 'Downed Tree'
@@ -43,7 +44,7 @@ describe 'Create issue' do
         click_on 'Submit Issue'
 
         expect(page).to have_content 'Add an Issue'
-        expect(page).to have_content "Field can't be blank"
+        expect(page).to have_content "can't be blank"
       end
     end
   end

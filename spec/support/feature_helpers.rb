@@ -10,10 +10,10 @@ def set_session
 end
 
 def login_with_strava
-    OmniAuth.config.test_mode = true
-    visit root_path
-    click_on "Login with Strava"
-  end
+  OmniAuth.config.test_mode = true
+  visit root_path
+  click_on "Login with Strava"
+end
 
   def stub_new_user_omniauth
     OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new({
