@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse" role="navigation">
+
+  <div class="navbar-header">
+    <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+        <%= link_to 'Pampered Trails', root_path %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li>
+          <%= link_to 'Add an Issue'%>
+        </li>
+        <li>
+          <%= link_to 'Logout', logout_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Login with Strava', '/auth/strava' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem "omniauth-strava"
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -44,6 +45,7 @@ group :development do
 end
 
 group :test do
+  gem 'rack_session_access'
   gem 'vcr'
   gem 'webmock'
   gem 'capybara-mechanize'
