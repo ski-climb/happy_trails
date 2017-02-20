@@ -4,7 +4,7 @@ $(document).ready(function() {
   }
 })
 
-function addMap() { mapboxgl.accessToken = '<%= ENV["MAPBOX_ACCESS_TOKEN"] %>';
+function addMap() { mapboxgl.accessToken = $('.map-issues').data('env');
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/outdoors-v9',
