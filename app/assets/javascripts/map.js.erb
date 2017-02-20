@@ -1,0 +1,14 @@
+$(document).ready(function() {
+  if ($('.map-issues').length) {
+    addMap();
+  }
+})
+
+function addMap() { mapboxgl.accessToken = '<%= ENV["MAPBOX_ACCESS_TOKEN"] %>';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/outdoors-v9',
+    center: [-105.339, 40.008],
+    zoom: 10
+  });
+};
