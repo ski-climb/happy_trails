@@ -16,6 +16,9 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to validate_presence_of :description }
     it { is_expected.to validate_presence_of :category }
     it { is_expected.to validate_presence_of :severity }
+    it { is_expected.to validate_presence_of :latitude }
+    it { is_expected.to validate_presence_of :longitude }
+    it { is_expected.to validate_presence_of :title }
   end
 
   context 'relationships' do

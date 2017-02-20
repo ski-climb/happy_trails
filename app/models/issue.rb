@@ -1,5 +1,5 @@
 class Issue < ApplicationRecord
-  validates :description, :category, :severity, presence: true
+  validates :description, :category, :severity, :title, :latitude, :longitude, presence: true
 
   belongs_to :user, optional: true
   belongs_to :admin, optional: true
