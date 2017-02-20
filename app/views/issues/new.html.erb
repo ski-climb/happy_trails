@@ -1,0 +1,11 @@
+<h2>Create an Issue</h2>
+
+<%= simple_form_for @issue do |f| %>
+  <%= f.input :title, placeholder: 'title', label: false %>
+  <%= f.input :description, placeholder: 'description', label: false %>
+  <%= f.input :severity, selected: 'Low', label: false %>
+  <%= f.input :category, selected: 'Obstacle', label: false %>
+  <%= f.input :latitude, placeholder: '40.020749', label: false, as: :decimal %>
+  <%= f.input :longitude, placeholder: '-105.351165', label: false, as: :decimal %>
+  <%= f.submit 'Create Issue', class: 'btn btn-default' %>
+<% end %>
