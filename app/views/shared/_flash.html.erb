@@ -1,5 +1,8 @@
 <article>
   <% flash.each do |key, value| %>
-    <%= content_tag :div, sanitize(value), class: "alert alert-#{key}" %>
+    <%= content_tag :div, class: "alert alert-dismissible alert-#{key}" do %>
+      <%= sanitize(value) %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <% end %>
   <% end %>
 </article>
