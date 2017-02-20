@@ -16,6 +16,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'faraday'
 gem 'figaro'
+gem 'simple_form'
+gem 'enum_help'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
