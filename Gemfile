@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "omniauth-strava"
+gem 'factory_girl_rails'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -33,9 +35,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'faker'
 end
 
 group :development do
