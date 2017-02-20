@@ -17,7 +17,7 @@
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
         <li>
-          <%= link_to 'Add an Issue'%>
+          <%= link_to 'Add an Issue', new_issue_path %>
         </li>
         <li>
           <%= link_to 'Logout', logout_path, method: :delete %>

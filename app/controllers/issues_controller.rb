@@ -6,8 +6,7 @@ class IssuesController < ApplicationController
   def create
     @issue = current_user.issues.new(issue_params)
     if @issue.save
-      redirect_to root_path
-      # redirect_to root_path, success: 'Issue added.'
+      redirect_to root_path, success: 'Issue added.'
     else
       render :new
     end
