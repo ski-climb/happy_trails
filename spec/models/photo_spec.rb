@@ -10,7 +10,7 @@ RSpec.describe Photo, type: :model do
   end
 
   context 'validations' do
-    it { is_expected.to validate_presence_of :url }
+    it { is_expected.to validate_presence_of :issue }
   end
 
   context 'relationships' do
@@ -26,7 +26,7 @@ RSpec.describe Photo, type: :model do
       saved_photo = Photo.first
 
       expect(Photo.count).to eq 1
-      expect(saved_photo.url).to eq photo.url
+      expect(saved_photo.id).to eq photo.id
     end
   end
 end
