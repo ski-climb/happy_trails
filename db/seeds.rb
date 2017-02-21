@@ -8,18 +8,17 @@ class Seed
     seed.generate_users
     seed.generate_issues
     seed.generate_comments
-    seed.generate_photos
   end
 
    def remove_all_existing_data
     puts "Clearing out the data currently in your database (Ctrl-C now if that's a bad thing...)"
     sleep(5)
     puts "Too late!"
+    Photo.destroy_all
+    Comment.destroy_all
+    Issue.destroy_all
     Admin.destroy_all
     User.destroy_all
-    Issue.destroy_all
-    Comment.destroy_all
-    Photo.destroy_all
     puts "Creating fresh, new data"
   end
 
@@ -44,10 +43,6 @@ class Seed
     20.times do
       FactoryGirl.create(:comment, user: User.all.sample, issue: Issue.all.sample)
     end
-  end
-
-  def generate_photos
-
   end
 end
 
