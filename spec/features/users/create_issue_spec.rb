@@ -7,10 +7,18 @@ describe 'Create issue' do
       logged_in_user
       visit root_path
       click_on 'Add an Issue'
+        Fog.mock!
+        Fog::Mock.delay = 0
+        service = Fog::Storage.new({
+          provider: 'AWS',
+          aws_access_key_id: ENV['S3_KEY'],
+          aws_secret_access_key: ENV['S3_SECRET']
+        })
+        service.directories.create(:key => 'happy-trails')
     end
 
     context 'valid attributes' do
-      it 'adds issue to database' do
+      it 'adds issue to database', vcr: true do
         expect(Issue.count).to eq 0
         expect(page).to have_content 'Add an Issue'
 
@@ -20,6 +28,8 @@ describe 'Create issue' do
         fill_in 'issue[longitude]',   with: -105.351165
         select  'Obstacle',           from: 'issue[category]'
         select  'High',               from: 'issue[severity]'
+
+        attach_file "image[]", Rails.root + "spec/fixtures/downed_tree.jpg"
 
         click_on 'Submit Issue'
 
@@ -36,6 +46,7 @@ describe 'Create issue' do
         expect(issue.latitude).to eq 40.020749
         expect(issue.longitude).to eq -105.351165
         expect(issue.resolved).to be_falsey
+        expect(issue.photos.count).to eq 1
       end
     end
 
