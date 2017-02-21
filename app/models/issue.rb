@@ -5,6 +5,7 @@ class Issue < ApplicationRecord
   belongs_to :admin, optional: true
   has_many :comments
   has_many :photos
+  accepts_nested_attributes_for :photos
 
   enum severity: %w(low medium high)
   enum category: %w(obstacle washout mud landslide other)

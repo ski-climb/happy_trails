@@ -4,5 +4,7 @@ class Photo < ApplicationRecord
   belongs_to :comment, optional: true
   belongs_to :issue
 
-  validates :url, presence: true
+  validates :issue, presence: true
+
+  mount_uploader :url, ImageUploader
 end
