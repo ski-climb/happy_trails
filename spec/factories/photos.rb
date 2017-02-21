@@ -4,6 +4,6 @@ FactoryGirl.define do
     comment
     issue
     admin nil
-    url   { Faker::Placeholdit.image }
+    url   nil
   end
 end

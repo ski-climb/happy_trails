@@ -26,8 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "omniauth-strava"
+
 gem 'factory_girl_rails'
 gem 'faker'
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'mini_magick' 
 
 group :development, :test do
   gem 'byebug', platform: :mri
