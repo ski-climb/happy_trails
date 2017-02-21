@@ -1,0 +1,11 @@
+<%= simple_form_for @issue, html: { multipart: true } do |f| %>
+  <%= f.input :title, placeholder: 'Provide a descriptive title. Include the trail name.', label: false %>
+  <%= f.input :severity, label: false, prompt: 'Severity' %>
+  <%= f.input :category, label: false, prompt: 'Category' %>
+  <%= f.input :latitude, placeholder: 'Latitude (example: 40.020749)', label: false, as: :decimal %>
+  <%= f.input :longitude, placeholder: 'Longitude (example: -105.351165)', label: false, as: :decimal %>
+  <%= f.input :description, placeholder: 'Describe the issue the best you can. Please be specific.', label: false %>
+  <p>Add a photo:</p>
+  <%= file_field_tag 'image[]', type: :file  %>
+  <%= f.submit 'Submit Issue', class: 'btn btn-default' %>
+<% end %>
