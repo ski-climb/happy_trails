@@ -14,6 +14,11 @@ describe "User login" do
       expect(page).to have_link 'Logout'
       expect(page).to_not have_link 'Login with Strava'
       expect(User.count).to eq 1
+
+      session = page.get_rack_session
+
+      expect(session).to have_key 'user_id'
+      expect(session['user_id']).to eq User.first.id
     end
   end
 
@@ -30,6 +35,11 @@ describe "User login" do
       expect(page).to_not have_link 'Login with Strava'
       expect(page).to have_link 'Logout'
       expect(User.count).to eq 1
+
+      session = page.get_rack_session
+
+      expect(session).to have_key 'user_id'
+      expect(session['user_id']).to eq User.first.id
     end
   end
 end
