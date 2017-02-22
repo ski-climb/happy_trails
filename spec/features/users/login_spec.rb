@@ -49,7 +49,7 @@ describe "User login" do
       user = create(:user)
 
       stub_existing_user_omniauth(user)
-      login_with_strava
+      visit '/auth/strava'
 
       session = page.get_rack_session
 
