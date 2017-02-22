@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Issues API' do
-  let(:issue_attributes) { ['title', 'category', 'severity', 'resolved', 'id'] }
+  let(:issue_attributes) { ['title', 'category', 'severity', 'id'] }
 
   context '5 issues' do
     it 'returns all issues' do
@@ -20,8 +20,8 @@ describe 'Issues API' do
       issue_attributes.each do |attribute|
         expect(issue[attribute]).to eq issue_1.send(attribute.to_sym)
       end
-      
-      expect(issue).to have_key 'current_user?'
+      expect(issue['resolved']).to eq 'unresolved'
+      expect(issue).to have_key 'current_user'
       expect(issue['coordinates']).to be_a Array
       expect(issue['coordinates']).to eq [issue_1.longitude, issue_1.latitude]
     end
@@ -29,7 +29,7 @@ describe 'Issues API' do
 
   context 'some issues belong to logged in current user' do
     it 'returns all issues with correct current user boolean' do
-      create(:issue, user: logged_in_user)
+      create(:issue, user: logged_in_user, resolved: true)
       create(:issue)
 
       get '/api/v1/issues'
@@ -39,8 +39,9 @@ describe 'Issues API' do
       other_user_issue = issues.last
 
       expect(response).to be_success
-      expect(current_user_issue['current_user?']).to be_truthy
-      expect(other_user_issue['current_user?']).to be_falsey
+      expect(current_user_issue['current_user']).to eq 'belong'
+      expect(other_user_issue['current_user']).to eq 'not-belong'
+      expect(current_user_issue['resolved']).to eq 'resolved'
     end
   end
 
@@ -54,7 +55,7 @@ describe 'Issues API' do
 
       expect(response).to be_success
       issues.each do |issue|
-        expect(issue['current_user?']).to be_falsey
+        expect(issue['current_user']).to eq 'not-belong'
       end
     end
   end

@@ -4,11 +4,23 @@ class IssueSerializer < ActiveModel::Serializer
               :category,
               :severity,
               :resolved,
-              :current_user?,
+              :current_user,
               :coordinates
   
-  def current_user?
-    @instance_options[:current_id] == object.user_id
+  def current_user
+    if @instance_options[:current_id] == object.user_id
+      'belong'
+    else
+      'not-belong'
+    end
+  end
+
+  def resolved
+    if object.resolved
+      'resolved'
+    else
+      'unresolved'
+    end
   end
 
   def coordinates
