@@ -33,6 +33,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem 'mini_magick' 
 gem 'exifr'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
