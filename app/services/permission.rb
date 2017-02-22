@@ -20,6 +20,7 @@ class Permission
     def permitted_for_user?
       return true if controller == 'sessions' && action.in?(%w(destroy))
       return true if controller == 'issues'   && action.in?(%w(index new create))
+      return true if controller == 'admin/sessions' &&   action.in?(%w(new create))
     end
 
     def permitted_for_guest?
