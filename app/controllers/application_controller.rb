@@ -8,11 +8,19 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def current_admin
+    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
+  end
+
+  def current_person
+    current_user || current_admin
+  end
+
   def authorize!
     render file: 'public/404', status: 404 unless authorized?
   end
 
   def authorized?
-    Permission.new(current_user, params[:controller], params[:action]).authorized?
+    Permission.new(current_person, params[:controller], params[:action]).authorized?
   end
 end
