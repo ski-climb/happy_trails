@@ -9,6 +9,11 @@ def set_session
   page.set_rack_session(user_id: user.id)
 end
 
+def set_admin_session
+  admin = create(:admin)
+  page.set_rack_session(admin_id: admin.id)
+end
+
 def login_with_strava
   OmniAuth.config.test_mode = true
   visit root_path
