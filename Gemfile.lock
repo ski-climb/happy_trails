@@ -85,6 +85,7 @@ GEM
     erubis (2.7.0)
     excon (0.55.0)
     execjs (2.7.0)
+    exifr (1.2.5)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.8.0)
@@ -410,6 +411,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   enum_help
+  exifr
   factory_girl_rails
   faker
   faraday
