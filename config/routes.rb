@@ -8,4 +8,10 @@ Rails.application.routes.draw do
 
   get '/admin/login',  to: 'admin/sessions#new'
   post '/admin/login', to: 'admin/sessions#create'
+
+  namespace :api do
+    namespace :v1 do
+      resources :issues, only: [:index]
+    end
+  end
 end

@@ -33,5 +33,6 @@ class Permission
       return true if controller == 'sessions'       && action.in?(%w(new create))
       return true if controller == 'issues'         &&   action.in?(%w(index))
       return true if controller == 'admin/sessions' &&   action.in?(%w(new create))
+      return true if controller == 'api/v1/issues' && action.in?(%w(index))
     end
 end
