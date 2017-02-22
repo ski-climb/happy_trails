@@ -5,7 +5,8 @@ describe 'Issues API' do
 
   context '5 issues' do
     it 'returns all issues' do
-      issue_1, issue_2 = create_list(:issue, 2)
+      create_list(:issue, 2)
+      issue_1 = Issue.first
 
       get '/api/v1/issues'
 
@@ -19,9 +20,10 @@ describe 'Issues API' do
       issue_attributes.each do |attribute|
         expect(issue[attribute]).to eq issue_1.send(attribute.to_sym)
       end
-      expect(issue).to have_key 'latitude'
-      expect(issue).to have_key 'longitude'
+      
       expect(issue).to have_key 'current_user?'
+      expect(issue['coordinates']).to be_a Array
+      expect(issue['coordinates']).to eq [issue_1.longitude, issue_1.latitude]
     end
   end
 
