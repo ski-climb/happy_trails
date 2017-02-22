@@ -4,11 +4,14 @@ class IssueSerializer < ActiveModel::Serializer
               :category,
               :severity,
               :resolved,
-              :latitude,
-              :longitude,
-              :current_user?
+              :current_user?,
+              :coordinates
   
   def current_user?
     @instance_options[:current_id] == object.user_id
+  end
+
+  def coordinates
+    [object.longitude, object.latitude]
   end
 end
