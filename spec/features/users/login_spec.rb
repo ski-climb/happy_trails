@@ -39,7 +39,24 @@ describe "User login" do
       session = page.get_rack_session
 
       expect(session).to have_key 'user_id'
-      expect(session['user_id']).to eq User.first.id
+      expect(session['user_id']).to eq user.id
+    end
+  end
+
+  context 'as a logged in admin' do
+    it 'logs admin out and logs user in' do
+      set_admin_session
+      user = create(:user)
+
+      stub_existing_user_omniauth(user)
+      login_with_strava
+
+      session = page.get_rack_session
+
+      expect(session).to have_key 'user_id'
+      expect(session['user_id']).to eq user.id
+      expect(session).to_not have_key 'admin_id'
     end
   end
 end
+
