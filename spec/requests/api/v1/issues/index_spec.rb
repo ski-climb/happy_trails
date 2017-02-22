@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 describe 'Issues API' do
-  let(:project_attributes) { ['title', 'description', 'category',
-    'severity', 'resolved', 'id'] }
+  let(:issue_attributes) { ['title', 'category', 'severity', 'resolved', 'id'] }
 
   context '5 issues' do
     it 'returns all issues' do
@@ -17,7 +16,7 @@ describe 'Issues API' do
       expect(issues).to be_a Array
       expect(issues.count).to eq 2
 
-      project_attributes.each do |attribute|
+      issue_attributes.each do |attribute|
         expect(issue[attribute]).to eq issue_1.send(attribute.to_sym)
       end
       expect(issue).to have_key 'latitude'
