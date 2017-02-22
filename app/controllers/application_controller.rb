@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   add_flash_types :success, :info, :warning, :danger
-  helper_method :current_user
+  helper_method :current_user, :current_person
   before_action :authorize!
 
   def current_user
