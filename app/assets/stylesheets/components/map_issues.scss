@@ -48,3 +48,45 @@
 .resolved:after {
   background-color: lightgrey;
 }
+
+.toggles {
+  font-weight: 600;
+  position: absolute;
+  top: 4em;
+  right: 4em;
+  z-index: 1;
+  border-radius: 3px;
+  max-width: 20%;
+  color: #fff;
+}
+
+.toggles input[type=radio]:first-child + label {
+  border-radius: 3px 3px 0 0;
+}
+
+.toggles label:last-child {
+  border-radius: 0 0 3px 3px;
+  border: none;
+}
+
+.toggles input[type=radio] {
+  display: none;
+}
+
+.toggles input[type=radio] + label {
+  background-color: #3386c0;
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.toggles input[type=radio] + label {
+  background-color: #3386c0;
+  text-transform: capitalize;
+}
+
+.toggles input[type=radio]:checked + label:before {
+  content: '✔';
+  margin-right: 5px;
+}
