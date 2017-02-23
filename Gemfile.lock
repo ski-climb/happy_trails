@@ -306,6 +306,7 @@ GEM
     public_suffix (2.0.5)
     puma (3.7.0)
     rack (2.0.1)
+    rack-cors (0.4.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack_session_access (0.1.1)
@@ -438,6 +439,7 @@ DEPENDENCIES
   omniauth-strava
   pg (~> 0.18)
   puma (~> 3.0)
+  rack-cors
   rack_session_access
   rails (~> 5.0.1)
   rspec-rails
