@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources 'issues', only: [:index, :new, :create]
 
+  get '/admin/login',  to: 'admin/sessions#new'
+  post '/admin/login', to: 'admin/sessions#create'
+
   namespace :api do
     namespace :v1 do
       resources :issues, only: [:index]
