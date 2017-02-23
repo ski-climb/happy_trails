@@ -18,6 +18,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'simple_form'
 gem 'enum_help'
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
