@@ -1,0 +1,36 @@
+.map-issues {
+  position: fixed;
+  top: 52px;
+  min-width: 400px;
+  min-height: 300px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.marker {
+  background-color: purple;
+  border: solid 0.5px black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.low {
+  background-color: yellow;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.high {
+  background-color: red;
+}
+
+.resolved {
+  background-color: lightgrey;
+}
+
