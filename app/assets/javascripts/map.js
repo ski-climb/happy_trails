@@ -22,11 +22,9 @@ function getPoints() {
 function renderPoints(issues) {
   for(var i = 0; i < issues.length; i++) {
 
-    console.log(map + "cats");
-
     var el = document.createElement('div');
     el.id = 'marker-' + issues[i].id;
-    el.classList.add("marker");
+    el.classList.add("pin");
     el.classList.add(issues[i].severity);
     el.classList.add(issues[i].current_user);
     el.classList.add(issues[i].resolved);
