@@ -1,5 +1,5 @@
 
-var API = "http://localhost:3000"
+var API = "http://pampered-trails.herokuapp.com"
 var map;
 
 $(document).ready(function() {
