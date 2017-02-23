@@ -8,32 +8,6 @@
   z-index: -1;
 }
 
-.marker {
-  background-color: purple;
-  border: solid 0.5px black;
-  width: 15px;
-  height: 15px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(45deg);
-  cursor: pointer;
-}
-
-.low {
-  background-color: yellow;
-}
-
-.medium {
-  background-color: orange;
-}
-
-.high {
-  background-color: red;
-}
-
-.resolved {
-  background-color: lightgrey;
-}
-
 .pin {
   background-color: black;
   background-image: linear-gradient(left, hsla(0,0%,100%,.2), hsla(0,0%,0%,.2));
