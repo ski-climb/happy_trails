@@ -34,6 +34,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<S3_SECRET>') { ENV["S3_SECRET"] }
   config.filter_sensitive_data('<S3_KEY>') { ENV["S3_KEY"] }
+  config.filter_sensitive_data('<ACCESS_TOKEN>') { ENV["ACCESS_TOKEN"] }
 end
 
 Shoulda::Matchers.configure do |config|
