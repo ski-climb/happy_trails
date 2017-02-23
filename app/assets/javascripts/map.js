@@ -1,6 +1,7 @@
 
-var API = "http://pampered-trails.herokuapp.com"
+var API = "https://pampered-trails.herokuapp.com"
 var map;
+var issues;
 
 $(document).ready(function() {
   if ($('.map-issues').length) {
@@ -9,11 +10,13 @@ $(document).ready(function() {
 });
 
 function getPoints() {
-  console.log(map);
   return $.get({
     url: API + "/api/v1/issues"
   })
-  .done(renderPoints)
+  .done(function(data) {
+    issues = data;
+    renderPoints(data)
+  })
   .fail(function(response) {
     console.log("fail");
   });
@@ -49,15 +52,31 @@ function addMap() {
   map.on('load', function () {
     addRoute();
     getPoints(); 
+    togglePoints();
   });
 };
+
+function togglePoints() {
+  $("#toggles").change(function(event) {
+    toggleByAttribute(event);
+  });
+};
+
+function toggleByAttribute(visibleId) {
+  var visibleId = event.target.id
+  if (event.target.checked) {
+    $(".pin").hide();
+    if($(".pin").length){
+      $("." + visibleId).show();
+    }
+  }
+}
 
 function addRoute() {
   var points = polyline.decode("g`sqFt~y_SeB~FvO`U}LzM|FzHkVhV`SpWlG|Mh`@vCdI|CHbCxV~G|AzN`JnQb@dFjFvIPjDrAf@n@tL|_@Cj@~Of\\RU|dAhCr@e@xhAjElABpf@d[b@TbpCfUf@x@bF|NH");
   var route = points.map(function(val) {
     return [val[1], val[0]];
   });
-  console.log(route);
 
    map.addLayer({
         "id": "route",
@@ -82,4 +101,4 @@ function addRoute() {
             "line-width": 8
         }
     });
-}
+};
