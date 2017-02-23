@@ -34,3 +34,43 @@
   background-color: lightgrey;
 }
 
+.pin {
+  background-color: black;
+  background-image: linear-gradient(left, hsla(0,0%,100%,.2), hsla(0,0%,0%,.2));
+  display: block;
+  height: 1.5em;
+  width: .1em;
+  cursor: pointer;
+}
+
+.pin:after {
+  background-color: red;
+  background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.2), hsla(0,0%,0%,.2));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+              inset .2em .2em .2em hsla(0,0%,100%,.2),
+              inset -.2em -.2em .2em hsla(0,0%,0%,.2),
+              1.5em 1.25em .25em hsla(0,0%,0%,.15);
+  content: '';
+  height: 1em;
+  left: -.45em;
+  position: absolute;
+  top: -.65em;
+  width: 1em;
+}
+
+.low:after {
+  background-color: yellow;
+}
+
+.medium:after {
+  background-color: orange;
+}
+
+.high:after {
+  background-color: red;
+}
+
+.resolved:after {
+  background-color: lightgrey;
+}
