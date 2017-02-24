@@ -113,8 +113,8 @@ function addRoute(i, summaryPolyline) {
             "line-cap": "round"
         },
         "paint": {
-            "line-color": "#" + ((i + 1) * 333),
-            "line-width": 5
+            "line-color": '#FC4C02',
+            "line-width": 3
         }
     });
 };
