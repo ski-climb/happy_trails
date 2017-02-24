@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/activities?access_token=<ACCESS_TOKEN>&per_page=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 24 Feb 2017 18:33:38 GMT
+      Etag:
+      - W/"f0827a546cc74cc1552b0eb48ac97b56"
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTE1YmYyYzdmMTE5NzRiMjlhYTZkNjhlMjYwNjk3MGNkBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--c24754230e324aaa248eac28a775a3502dc05a9b;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 200 OK
+      Strava-Athlete-Upload-Version:
+      - 51ab7e215dabab38aace5691faca731e
+      X-Frame-Options:
+      - DENY
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '2,58'
+      X-Request-Id:
+      - 5b2e93a1236adc4ce77b06cfc497380e
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '1161'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":875800612,"resource_state":2,"external_id":"6033EBB5-4043-4D66-803B-653B7CB6A7B5","upload_id":968943956,"athlete":{"id":19613252,"resource_state":1},"name":"Morning
+        Ride","distance":7093.4,"moving_time":1290,"elapsed_time":1614,"total_elevation_gain":10.1,"type":"Ride","start_date":"2017-02-22T15:14:03Z","start_date_local":"2017-02-22T08:14:03Z","timezone":"(GMT-07:00)
+        America/Denver","utc_offset":-25200.0,"start_latlng":[39.76,-105.06],"end_latlng":[39.75,-105.0],"location_city":null,"location_state":null,"location_country":null,"start_latitude":39.76,"start_longitude":-105.06,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a875800612","summary_polyline":"igsqFpmd`SI{R|EeQtC{CAuzCu@oJ{P{f@tAkBeAyBvDmAdTsYuPgWrJwOkB{FB`BmBo@w@yB`C]kBdB|EtA","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":5.499,"max_speed":11.9,"average_watts":68.5,"kilojoules":88.4,"device_watts":false,"has_heartrate":false,"elev_high":1641.6,"elev_low":1576.0,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"workout_type":10},{"id":874072613,"resource_state":2,"external_id":"40B82794-16E0-4E16-9689-EFA201E8E01D","upload_id":967066068,"athlete":{"id":19613252,"resource_state":1},"name":"Evening
+        Ride","distance":6748.0,"moving_time":1417,"elapsed_time":1959,"total_elevation_gain":65.3,"type":"Ride","start_date":"2017-02-21T01:09:58Z","start_date_local":"2017-02-20T18:09:58Z","timezone":"(GMT-07:00)
+        America/Denver","utc_offset":-25200.0,"start_latlng":[39.75,-105.0],"end_latlng":[39.76,-105.06],"location_city":null,"location_state":null,"location_country":null,"start_latitude":39.75,"start_longitude":-105.0,"achievement_count":2,"kudos_count":1,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a874072613","summary_polyline":"e_sqFd}y_Sl@WqBtBvBFFmBoMjRbVt^aThYsDhA|@xBoAfBjCzDJ`EpLx\\f@jI^l~CeDtBeFhNCtQ","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":4.762,"max_speed":11.7,"average_watts":84.8,"kilojoules":120.2,"device_watts":false,"has_heartrate":false,"elev_high":1642.3,"elev_low":1576.0,"pr_count":2,"total_photo_count":0,"has_kudoed":false,"workout_type":10},{"id":872969283,"resource_state":2,"external_id":"79EC0036-DB8C-42E9-AC26-937116D9B123","upload_id":965871320,"athlete":{"id":19613252,"resource_state":1},"name":"Afternoon
+        Ride","distance":8115.6,"moving_time":1615,"elapsed_time":1793,"total_elevation_gain":58.8,"type":"Ride","start_date":"2017-02-20T00:32:51Z","start_date_local":"2017-02-19T17:32:51Z","timezone":"(GMT-07:00)
+        America/Denver","utc_offset":-25200.0,"start_latlng":[39.73,-105.0],"end_latlng":[39.76,-105.06],"location_city":null,"location_state":null,"location_country":null,"start_latitude":39.73,"start_longitude":-105.0,"achievement_count":6,"kudos_count":1,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a872969283","summary_polyline":"kzmqFrj{_SkgA@Pr}A_L`AqXsHg@pDfCvOqH`MHflAs@bK_FEmEpFmFnPcBnMgFSkSrKgAjJpDzKAbF","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":5.025,"max_speed":8.8,"average_watts":89.0,"kilojoules":143.7,"device_watts":false,"has_heartrate":false,"elev_high":1641.2,"elev_low":1582.0,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"workout_type":10}]'
+    http_version: 
+  recorded_at: Fri, 24 Feb 2017 18:33:38 GMT
+recorded_with: VCR 3.0.3
