@@ -20,7 +20,10 @@ class RoutesService
   end
 
   def summary_polylines(raw_routes)
-    raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
+    if raw_routes
+      raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
+    else
+      []
+    end
   end
-
 end
