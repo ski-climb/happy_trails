@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/athlete/activities?access_token=invalid_token
+    uri: https://www.strava.com/api/v3/athlete/activities?access_token=invalid_token&per_page=3
     body:
       encoding: US-ASCII
       string: ''
@@ -23,16 +23,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 24 Feb 2017 17:01:02 GMT
+      - Fri, 24 Feb 2017 17:07:49 GMT
       Set-Cookie:
-      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTIzYmYyNjMzN2NmNDNjMjNiYTE3YTczNDJhZDE4YTliBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--f834d735e2a75a1e35aff02d6c6aa788af5fce43;
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTEzNTJkYmEwOTI1MzBmN2I2NmI2YmM0NWYwYzRjMjNlBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--9c3363c28321059b7fd3980e552fde407925fb84;
         domain=strava.com; path=/; HttpOnly
       Status:
       - 401 Unauthorized
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - f04192eb13d0bedcc74f843b60b5308a
+      - 4459fc7caaac856c9ced78630f0eaa41
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -43,5 +43,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}'
     http_version: 
-  recorded_at: Fri, 24 Feb 2017 17:01:02 GMT
+  recorded_at: Fri, 24 Feb 2017 17:07:49 GMT
 recorded_with: VCR 3.0.3
