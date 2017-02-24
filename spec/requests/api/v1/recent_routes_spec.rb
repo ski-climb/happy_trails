@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Users API' do
+describe 'Recent Routes API' do
   context 'logged in user with valid token' do
     it 'returns users 3 most recent routes', vcr: true do
       user = create(:user, token: ENV['ACCESS_TOKEN'])
