@@ -16,14 +16,10 @@ class RoutesService
   def recent_routes
     response = conn.get { |req| req.params['access_token'] = token }
     raw_routes = JSON.parse(response.body)[0..2]
-    summary_polylines(raw_routes)
+    summary_polylines(raw_routes) rescue []
   end
 
   def summary_polylines(raw_routes)
-    if raw_routes
-      raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
-    else
-      []
-    end
+    raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
   end
 end
