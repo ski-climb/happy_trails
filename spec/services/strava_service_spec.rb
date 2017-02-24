@@ -17,7 +17,7 @@ describe 'Strava Service' do
         routes = StravaService.recent_routes(ENV['ACCESS_TOKEN'])
 
         expect(routes).to be_a Array
-        expect(routes.count).to eq 3
+        expect(routes.count).to eq 7
         expect(routes.first).to be_a String
       end
     end
