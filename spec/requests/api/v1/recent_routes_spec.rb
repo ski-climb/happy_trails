@@ -6,7 +6,7 @@ describe 'Recent Routes API' do
       user = create(:user, token: ENV['ACCESS_TOKEN'])
       stub_user(user)
 
-      get "/api/v1/recent_routes"
+      get "/api/v1/users/#{user.id}/recent_routes"
       routes = JSON.parse(response.body)
 
       expect(response).to be_success
@@ -21,7 +21,7 @@ describe 'Recent Routes API' do
       user = create(:user, token: 'invalid_token')
       stub_user(user)
 
-      get "/api/v1/recent_routes"
+      get "/api/v1/users/#{user.id}/recent_routes"
       routes = JSON.parse(response.body)
 
       expect(routes).to be_an Array
@@ -29,9 +29,9 @@ describe 'Recent Routes API' do
     end
   end
 
-  context 'guest visitor' do
+  context 'invalid user id' do
     it 'returns 404' do
-      get "/api/v1/recent_routes"
+      get "/api/v1/users/1/recent_routes"
 
       expect(response.status).to eq 404
     end
