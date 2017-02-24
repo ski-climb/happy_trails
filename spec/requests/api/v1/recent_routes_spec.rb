@@ -11,7 +11,7 @@ describe 'Recent Routes API' do
 
       expect(response).to be_success
       expect(routes).to be_an Array
-      expect(routes.count).to eq 3
+      expect(routes.count).to eq 7
       expect(routes.first).to be_a String
     end
   end
