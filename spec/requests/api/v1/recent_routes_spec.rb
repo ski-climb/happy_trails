@@ -18,7 +18,8 @@ describe 'Users API' do
 
   context 'logged in user with invalid token' do
     it 'returns empty array', vcr: true do
-      user = logged_in_user
+      user = create(:user, token: 'invalid_token')
+      login_user(user)
 
       get "/api/v1/recent_routes"
       routes = JSON.parse(response.body)

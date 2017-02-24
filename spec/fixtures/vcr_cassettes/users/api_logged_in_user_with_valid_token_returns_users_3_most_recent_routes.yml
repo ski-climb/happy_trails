@@ -23,24 +23,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 24 Feb 2017 00:19:42 GMT
+      - Fri, 24 Feb 2017 02:30:12 GMT
       Etag:
       - W/"d9d12c664c29fa323b7528a28298d05f"
       Set-Cookie:
-      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTZhMDI1YTMxZjQ0Nzc4YjZiZjI5Y2M0NDk0ZGViZDJjBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--f0dec5ada941ad1d014ee756513268b0aad2112a;
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTA2MjhhNDYzYWRmMmY0NDYwMDVkOTEzNjNhMDE4ZDQ5BjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--e24aa9288e0036c609f4cd22e6c65effeb6f83a5;
         domain=strava.com; path=/; HttpOnly
       Status:
       - 200 OK
       Strava-Athlete-Upload-Version:
-      - 15c461c502c893454f1d40da31e0ee6c
+      - 8037fbb7c01a06bb962322e4aea1cc00
       X-Frame-Options:
       - DENY
       X-Ratelimit-Limit:
       - '600,30000'
       X-Ratelimit-Usage:
-      - '2,4'
+      - '1,5'
       X-Request-Id:
-      - 3ad531996b08609a0233901971a11534
+      - 6b9ed6635169deda4996ffc6e6393be9
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -111,5 +111,5 @@ http_interactions:
         Ride","distance":5768.5,"moving_time":1202,"elapsed_time":1255,"total_elevation_gain":64.8,"type":"Ride","start_date":"2017-01-31T03:08:35Z","start_date_local":"2017-01-30T20:08:35Z","timezone":"(GMT-07:00)
         America/Denver","utc_offset":-25200.0,"start_latlng":[39.75,-105.0],"end_latlng":[39.76,-105.06],"location_city":null,"location_state":null,"location_country":null,"start_latitude":39.75,"start_longitude":-105.0,"achievement_count":1,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a850050869","summary_polyline":"gvrqF`j{_So@WpBvEoTbYwDlBfAxAmApB`Qbh@r@|KHr|CcDtB}E|MDbR","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"flagged":false,"gear_id":null,"average_speed":4.799,"max_speed":8.4,"device_watts":false,"has_heartrate":false,"elev_high":1641.0,"elev_low":1576.0,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"workout_type":10}]'
     http_version: 
-  recorded_at: Fri, 24 Feb 2017 00:19:42 GMT
+  recorded_at: Fri, 24 Feb 2017 02:30:12 GMT
 recorded_with: VCR 3.0.3
