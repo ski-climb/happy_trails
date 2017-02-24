@@ -4,7 +4,7 @@ describe 'Recent Routes API' do
   context 'logged in user with valid token' do
     it 'returns users 3 most recent routes', vcr: true do
       user = create(:user, token: ENV['ACCESS_TOKEN'])
-      login_user(user)
+      stub_user(user)
 
       get "/api/v1/recent_routes"
       routes = JSON.parse(response.body)
@@ -19,7 +19,7 @@ describe 'Recent Routes API' do
   context 'logged in user with invalid token' do
     it 'returns empty array', vcr: true do
       user = create(:user, token: 'invalid_token')
-      login_user(user)
+      stub_user(user)
 
       get "/api/v1/recent_routes"
       routes = JSON.parse(response.body)
