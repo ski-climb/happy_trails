@@ -1,4 +1,4 @@
-class RoutesService
+class StravaService
 
   attr_reader :token, :conn
 
