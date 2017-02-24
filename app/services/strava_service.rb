@@ -14,8 +14,11 @@ class StravaService
   end
 
   def recent_routes
-    response = conn.get { |req| req.params['access_token'] = token }
-    raw_routes = JSON.parse(response.body)[0..2]
+    response = conn.get do |req|
+      req.params['access_token'] = token
+      req.params['per_page']     = 3
+    end
+    raw_routes = JSON.parse(response.body)
     summary_polylines(raw_routes) rescue []
   end
 
