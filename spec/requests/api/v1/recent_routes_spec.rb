@@ -30,10 +30,13 @@ describe 'Recent Routes API' do
   end
 
   context 'invalid user id' do
-    it 'returns 404' do
+    it 'returns 404', vcr: true do
       get "/api/v1/users/1/recent_routes"
 
-      expect(response.status).to eq 404
+      routes = JSON.parse(response.body)
+
+      expect(routes).to be_an Array
+      expect(routes.count).to eq 0
     end
   end
 end
