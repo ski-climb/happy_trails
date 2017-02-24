@@ -1,5 +1,14 @@
 class RoutesService
 
+  attr_reader :token, :conn
+
+  def initialize(token)
+    @token = token
+    @conn = Faraday.new(url: "https://www.strava.com/api/v3/athlete/activities") do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+  end
+
   def self.recent_routes(token)
     new(token).recent_routes
   end
@@ -10,19 +19,7 @@ class RoutesService
     summary_polylines(raw_routes) rescue []
   end
 
-  private
-
-    attr_reader :token, :conn
-
-    def initialize(token)
-      @token = token
-      @conn = Faraday.new(url: "https://www.strava.com/api/v3/athlete/activities") do |faraday|
-        faraday.adapter Faraday.default_adapter
-      end
-    end
-
-
-    def summary_polylines(raw_routes)
-      raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
-    end
+  def summary_polylines(raw_routes)
+    raw_routes.map { |raw_route| raw_route['map']['summary_polyline'] }
+  end
 end
