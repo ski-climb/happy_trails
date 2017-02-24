@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/activities?access_token=9aSt1yBt7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 24 Feb 2017 00:16:48 GMT
+      Set-Cookie:
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTFhNzM2NWQ4ZGMzMDFiN2QxMGE2ZThkMDgzYmQwYTIwBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--866f02343af7a18f02a190c249693690b6c3f3a1;
+        domain=strava.com; path=/; HttpOnly
+      Status:
+      - 401 Unauthorized
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - cee80bd82a7e95362b85a689c1b2c492
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '107'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}'
+    http_version: 
+  recorded_at: Fri, 24 Feb 2017 00:16:48 GMT
+recorded_with: VCR 3.0.3
