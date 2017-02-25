@@ -23,16 +23,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 24 Feb 2017 23:25:24 GMT
+      - Sat, 25 Feb 2017 00:28:52 GMT
       Set-Cookie:
-      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTUyMzRkYjc5ODNmNzZkNWUyOWQzMWMxZmFjOWJjMTZiBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--b359443cc553e2010a7628a625e1a61b27fdbf86;
+      - _strava3_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJWE1YzU4M2U2YjFmYzk5NTcyODdkYTk5ZTc1YTVhMWExBjsAVEkiEGNsZWFyX2NsaWNrBjsARlQ%3D--f3250f955f67bad4c425c8a6f2da52bea8e28c99;
         domain=strava.com; path=/; HttpOnly
       Status:
       - 401 Unauthorized
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - 21a4e5b653b0f1ed10e23caea4b18fef
+      - 6be105199176b4b06f76314dd5444b7d
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -43,5 +43,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}'
     http_version: 
-  recorded_at: Fri, 24 Feb 2017 23:25:24 GMT
+  recorded_at: Sat, 25 Feb 2017 00:28:52 GMT
 recorded_with: VCR 3.0.3
