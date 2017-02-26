@@ -1,12 +1,14 @@
-
 var API = "https://pampered-trails.herokuapp.com"
 var map;
 var issues;
+var personId;
+
 
 $(document).ready(function() {
   if ($('.map-issues').length) {
     addMap();
   }
+  personId = document.cookie.match(/\d+/)[0];
 });
 
 function getPoints() {
@@ -17,7 +19,7 @@ function getPoints() {
     issues = data;
     renderPoints(data)
   })
-  .fail(function(response) {
+  .fail(function() {
     console.log("fail");
   });
 }
@@ -50,9 +52,9 @@ function addMap() {
   map.addControl(new mapboxgl.NavigationControl());
   map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
   map.on('load', function () {
-    addRoute();
     getPoints(); 
     togglePoints();
+    displayRoutes();
   });
 };
 
@@ -72,14 +74,28 @@ function toggleByAttribute(visibleId) {
   }
 }
 
-function addRoute() {
-  var points = polyline.decode("g`sqFt~y_SeB~FvO`U}LzM|FzHkVhV`SpWlG|Mh`@vCdI|CHbCxV~G|AzN`JnQb@dFjFvIPjDrAf@n@tL|_@Cj@~Of\\RU|dAhCr@e@xhAjElABpf@d[b@TbpCfUf@x@bF|NH");
+function displayRoutes() {
+  return $.get({
+    url: API + "/api/v1/users/" + personId + "/recent_routes"
+  })
+  .done(function(data) {
+    for(var i = 0; i < data.length; i++){
+      addRoute(i, data[i]);
+    }
+  })
+  .fail(function() {
+    console.log("fail");
+  });
+}
+
+function addRoute(i, summaryPolyline) {
+  var points = polyline.decode(summaryPolyline);
   var route = points.map(function(val) {
     return [val[1], val[0]];
   });
 
    map.addLayer({
-        "id": "route",
+        "id": "route-" + i,
         "type": "line",
         "source": {
             "type": "geojson",
@@ -97,8 +113,8 @@ function addRoute() {
             "line-cap": "round"
         },
         "paint": {
-            "line-color": "#888",
-            "line-width": 8
+            "line-color": '#FC4C02',
+            "line-width": 3
         }
     });
 };

@@ -59,4 +59,3 @@ describe "User login" do
     end
   end
 end
-

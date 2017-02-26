@@ -41,4 +41,3 @@ def stub_existing_user_omniauth(user)
         credentials:  { token:          user.token }
       })
 end
-
