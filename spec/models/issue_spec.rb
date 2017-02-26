@@ -98,4 +98,59 @@ RSpec.describe Issue, type: :model do
       expect(issue.severity).to eq 'high'
     end
   end
+
+  describe "#submitter_name" do
+    context "when a user submits the issue" do
+      let!(:user) { create(:user) }
+      let!(:issue) { create(:issue, admin: nil, user: user) }
+
+      it "returns the name of the user who submitted the issue" do
+        expect(issue.submitter_name).to eq user.abbreviated_name
+      end
+    end
+
+    context "when an admin submits the issue" do
+      let!(:admin) { create(:admin) }
+      let!(:issue) { create(:issue, user: nil, admin: admin) }
+
+      it "returns the name of the admin who submitted the issue" do
+        expect(issue.submitter_name).to eq admin.abbreviated_name
+      end
+    end
+  end
+
+  describe "#resolved_status" do
+    let!(:issue) { create(:issue) }
+
+    context "when resolved" do
+      it "returns 'Resolved'" do
+        issue.resolved = true
+
+        expect(issue.resolved_status).to eq "Resolved"
+      end
+    end
+
+    context "when not resolved" do
+      it "returns 'Open'" do
+        issue.resolved = false
+
+        expect(issue.resolved_status).to eq "Open"
+      end
+    end
+  end
+
+  describe "#image" do
+    let!(:issue) { create(:issue) }
+    # allow_any_instance_of(Photo).to rec
+
+    context "when an image is present" do
+      it "returns the path for the image" do
+        # issue.photos.first.ur
+      end
+    end
+    context "when no image is present" do
+      it "returns nil" do
+      end
+    end
+  end
 end
