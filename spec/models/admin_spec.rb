@@ -30,4 +30,12 @@ RSpec.describe Admin, type: :model do
       expect(saved_admin.first_name).to eq admin.first_name
     end
   end
+
+  describe "#abbreviated_name" do
+    let!(:admin) { create(:admin, first_name: "han", last_name: "solo") }
+
+    it "returns the first name and the last initial of the admin" do
+      expect(admin.abbreviated_name).to eq "Han S."
+    end
+  end
 end
