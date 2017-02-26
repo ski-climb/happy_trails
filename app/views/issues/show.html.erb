@@ -1,0 +1,25 @@
+<section class="wrapper">
+  <div class="list-group">
+    <div class="list-group-item">
+      <%= image_tag @issue.photos.first.url.url, class: "img-responsive center-block img-rounded", alt: @issue.title %>
+    </div>
+    <div class="list-group-item">
+      <p class="list-group-item-text">Title:</p>
+      <h3 class="list-group-item-heading"><%= @issue.title %></h3>
+      <p class="list-group-item-text">Created by:</p>
+      <h3 class="list-group-item-heading"><%= @issue.submitter_name %></h3>
+      <p class="list-group-item-text">Description:</p>
+      <h3 class="list-group-item-heading"><%= @issue.description %></h3>
+      <p class="list-group-item-text">Category:</p>
+      <h3 class="list-group-item-heading"><%= @issue.category.capitalize %></h3>
+      <p class="list-group-item-text">Severity:</p>
+      <h3 class="list-group-item-heading"><%= @issue.severity.capitalize %></h3>
+      <p class="list-group-item-text">Latitude:</p>
+      <h3 class="list-group-item-heading"><%= @issue.latitude %></h3>
+      <p class="list-group-item-text">Longitude:</p>
+      <h3 class="list-group-item-heading"><%= @issue.longitude %></h3>
+      <p class="list-group-item-text">Resolved or Open:</p>
+      <h3 class="list-group-item-heading"><%= @issue.resolved_status %></h3>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,10 @@ class IssuesController < ApplicationController
     @issue = Issue.new
   end
 
+  def show
+    @issue = Issue.find(params[:id])
+  end
+
   def create
     @issue = current_user.issues.new(issue_params)
     if @issue.save
