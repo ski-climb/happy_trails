@@ -9,10 +9,6 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :token }
   end
 
-  context 'validations' do
-    it { is_expected.to validate_presence_of(:username) }
-  end
-
   context 'relationships' do
     it { is_expected.to have_many :issues }
     it { is_expected.to have_many :comments }
