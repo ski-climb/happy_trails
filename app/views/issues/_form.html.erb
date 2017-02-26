@@ -6,6 +6,6 @@
   <%= f.input :longitude, placeholder: 'Longitude (example: -105.351165)', label: false, as: :decimal %>
   <%= f.input :description, placeholder: 'Describe the issue the best you can. Please be specific.', label: false %>
   <p>Add a photo:</p>
-  <%= file_field_tag 'image[]', type: :file  %>
+  <%= file_field_tag 'image[]', type: :file, required: true  %>
   <%= f.submit 'Submit Issue', class: 'btn btn-default' %>
 <% end %>
