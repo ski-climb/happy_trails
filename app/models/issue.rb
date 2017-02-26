@@ -9,4 +9,13 @@ class Issue < ApplicationRecord
 
   enum severity: %w(low medium high)
   enum category: %w(obstacle washout mud landslide other)
+
+  def submitter_name
+    return user.abbreviated_name if user
+    return admin.abbreviated_name if admin
+  end
+
+  def resolved_status
+    resolved ? "Resolved" : "Open"
+  end
 end
