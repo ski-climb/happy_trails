@@ -6,4 +6,8 @@ class Admin < ApplicationRecord
   has_many :issues
   has_many :comments
   has_many :photos
+
+  def abbreviated_name
+    "#{first_name.capitalize} #{last_name.capitalize.first}."
+  end
 end
