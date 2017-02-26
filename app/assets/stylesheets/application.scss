@@ -2,9 +2,12 @@
 @import "bootstrap";
 @import "reset";
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
 @import "base";
 @import "skeleton";
 @import "components/nav";
 @import "components/map_issues";
 @import "sections/issue-form";
-@import "sections/admin-login"
+@import "sections/issue-show";
+@import "sections/admin-login";
+@import "media_queries";
