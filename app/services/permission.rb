@@ -26,12 +26,12 @@ class Permission
     def permitted_for_user?
       return true if permitted_for_guest?
       return true if controller == 'sessions' && action.in?(%w(destroy))
-      return true if controller == 'issues'   && action.in?(%w(new create show))
+      return true if controller == 'issues'   && action.in?(%w(new create))
     end
 
     def permitted_for_guest?
       return true if controller == 'sessions'       && action.in?(%w(new create))
-      return true if controller == 'issues'         && action.in?(%w(index))
+      return true if controller == 'issues'         && action.in?(%w(index show))
       return true if controller == 'admin/sessions' && action.in?(%w(new create))
       return true if controller == 'api/v1/issues'  && action.in?(%w(index))
       return true if controller == 'api/v1/recent_routes'  && action.in?(%w(index))

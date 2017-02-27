@@ -1,4 +1,9 @@
 class IssuesController < ApplicationController
+
+  def index
+    @issue = Issue.last
+  end
+
   def new
     @issue = Issue.new
   end
