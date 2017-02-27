@@ -1,14 +1,18 @@
 <%= content_for(:mapbox) do %>
   <%= javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js' %>
 <% end %>
-<div id='map' class='map-issues' data-env=<%= ENV["MAPBOX_ACCESS_TOKEN"] %>></div>
-<nav id="toggles" class="toggles">
-  <input type="radio" name="displayed-filter" id="pin" checked="checked">
-  <label for="pin">All</label>
-  <input type="radio" name="displayed-filter" id="unresolved">
-  <label for="unresolved">Unresolved</label>
-  <input type="radio" name="displayed-filter" id="resolved">
-  <label for="resolved">Resolved</label>
-  <input type="radio" name="displayed-filter" id="belong">
-  <label for="belong">Mine</label>
-</nav>
+<div id='map' class='map-issues' data-env=<%= ENV["MAPBOX_ACCESS_TOKEN"] %>>
+  <nav id="toggles" class="toggles">
+    <input type="radio" name="displayed-filter" id="pin" checked="checked">
+    <label for="pin">All</label>
+    <input type="radio" name="displayed-filter" id="unresolved">
+    <label for="unresolved">Unresolved</label>
+    <input type="radio" name="displayed-filter" id="resolved">
+    <label for="resolved">Resolved</label>
+    <input type="radio" name="displayed-filter" id="belong">
+    <label for="belong">Mine</label>
+  </nav>
+</div>
+<div class="sidebar">
+  <%= render partial: 'issue' if @issue %>
+</div>
