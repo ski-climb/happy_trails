@@ -8,7 +8,9 @@ $(document).ready(function() {
   if ($('.map-issues').length) {
     addMap();
   }
-  personId = document.cookie.match(/\d+/)[0];
+  if (document.cookie) {
+    personId = document.cookie.match(/\d+/)[0];
+  }
 });
 
 function getPoints() {
