@@ -1,7 +1,9 @@
 <div class="list-group">
-  <div class="list-group-item">
-    <%= image_tag @issue.photos.first.url.url, class: "img-responsive center-block img-rounded", alt: @issue.title %>
-  </div>
+  <%= link_to issue_path(@issue) do %>
+    <div class="list-group-item">
+      <%= image_tag @issue.photos.first.url.url, class: "img-responsive center-block img-rounded", alt: @issue.title %>
+    </div>
+  <% end %>
   <div class="list-group-item">
     <p class="list-group-item-text">Title:</p>
     <h3 class="list-group-item-heading"><%= @issue.title %></h3>
