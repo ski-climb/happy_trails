@@ -8,7 +8,9 @@ $(document).ready(function() {
   if ($('.map-issues').length) {
     addMap();
   }
-  personId = document.cookie.match(/\d+/)[0];
+  if (document.cookie) {
+    personId = document.cookie.match(/\d+/)[0];
+  }
 });
 
 function getPoints() {
@@ -55,6 +57,8 @@ function addMap() {
     getPoints(); 
     togglePoints();
     displayRoutes();
+    showIsssue();
+
   });
 };
 
@@ -116,5 +120,15 @@ function addRoute(i, summaryPolyline) {
             "line-color": '#FC4C02',
             "line-width": 3
         }
+    });
+};
+
+function showIsssue() {
+    $('#map').on("click", ".pin", function(event) {
+      var id = this.id.match(/\d+/)[0];
+
+      event.preventDefault();
+      $.getScript(API + "/issues/" + id, function( data, textStatus, jqxhr) {
+      });
     });
 };

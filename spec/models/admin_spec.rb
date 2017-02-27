@@ -8,6 +8,13 @@ RSpec.describe Admin, type: :model do
     it { is_expected.to have_db_column :password_digest }
   end
 
+  context 'validations' do
+    it { is_expected.to validate_presence_of(:first_name) }
+    it { is_expected.to validate_presence_of(:last_name) }
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:password) }
+  end
+
   context 'relationships' do
     it { is_expected.to have_many :issues }
     it { is_expected.to have_many :comments }
@@ -21,6 +28,14 @@ RSpec.describe Admin, type: :model do
 
       expect(Admin.count).to eq 1
       expect(saved_admin.first_name).to eq admin.first_name
+    end
+  end
+
+  describe "#abbreviated_name" do
+    let!(:admin) { create(:admin, first_name: "han", last_name: "solo") }
+
+    it "returns the first name and the last initial of the admin" do
+      expect(admin.abbreviated_name).to eq "Han S."
     end
   end
 end

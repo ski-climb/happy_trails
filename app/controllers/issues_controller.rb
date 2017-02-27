@@ -1,6 +1,15 @@
 class IssuesController < ApplicationController
+
+  def index
+    @issue = Issue.last
+  end
+
   def new
     @issue = Issue.new
+  end
+
+  def show
+    @issue = Issue.find(params[:id])
   end
 
   def create

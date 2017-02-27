@@ -24,4 +24,22 @@ RSpec.describe User, type: :model do
       expect(saved_user.first_name).to eq user.first_name
     end
   end
+
+  describe "#abbreviated_name" do
+    context "when the user has a first and last name" do
+      let!(:user) { create(:user, first_name: "princess", last_name: "leia") }
+
+      it "returns the first name and last initial" do
+        expect(user.abbreviated_name).to eq "Princess L."
+      end
+    end
+
+    context "when the user does not have a first and last name" do
+      let!(:user) { create(:user, first_name: nil, last_name: nil, username: "princess_l") }
+
+      it "returns the username" do
+        expect(user.abbreviated_name).to eq "princess_l"
+      end
+    end
+  end
 end

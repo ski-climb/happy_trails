@@ -7,12 +7,16 @@ class ImageUploader < CarrierWave::Uploader::Base
     'public/uploads'
   end
 
-  # process resize_to_fit: [800, 800]
+  process resize_to_fit: [700, 7000]
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
+  version :medium do
+    process resize_to_fit: [500, 5000]
+  end
+
+  version :small do
+    process resize_to_fit: [300, 3000]
+  end
 
   def extension_whitelist
     %w(jpg jpeg png)
