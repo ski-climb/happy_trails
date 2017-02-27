@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  validates_presence_of :username
 
   has_many :issues
   has_many :comments
