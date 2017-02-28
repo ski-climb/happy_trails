@@ -1,0 +1,12 @@
+<%= content_for(:mapbox) do %>
+  <%= javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js' %>
+<% end %>
+
+<div id='map' class='map-locator' data-env=<%= ENV["MAPBOX_ACCESS_TOKEN"] %>>
+   <nav id="toggles" class="toggles">
+    <button id="submit-location">Submit Location</button>
+  </nav>
+</div>
+
+<article id='issue-id' data-issue-id= <%= @issue.id %> >
+<pre id='coordinates' class='coordinates'></pre>
