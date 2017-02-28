@@ -1,4 +1,3 @@
-var API = "https://pampered-trails.herokuapp.com"
 var map;
 var issues;
 var personId;
@@ -15,7 +14,7 @@ $(document).ready(function() {
 
 function getPoints() {
   return $.get({
-    url: API + "/api/v1/issues"
+    url: "/api/v1/issues"
   })
   .done(function(data) {
     issues = data;
@@ -79,7 +78,7 @@ function toggleByAttribute(visibleId) {
 
 function displayRoutes() {
   return $.get({
-    url: API + "/api/v1/users/" + personId + "/recent_routes"
+    url: "/api/v1/users/" + personId + "/recent_routes"
   })
   .done(function(data) {
     for(var i = 0; i < data.length; i++){
@@ -127,7 +126,7 @@ function showIssue() {
       var id = this.id.match(/\d+/)[0];
 
       event.preventDefault();
-      $.getScript(API + "/issues/" + id, function( data, textStatus, jqxhr) {
+      $.getScript("/issues/" + id, function( data, textStatus, jqxhr) {
       });
     });
 };
