@@ -1,5 +1,7 @@
 class IssuesController < ApplicationController
 
+  before_action :set_issue, only: [:edit, :show]
+
   def index
     @issue = Issue.last
   end
@@ -9,22 +11,17 @@ class IssuesController < ApplicationController
   end
 
   def show
-    @issue = Issue.find(params[:id])
   end
 
   def edit 
-    @issue = Issue.find(params[:id])
   end
 
   def create
     @issue = current_user.issues.new(issue_params)
     if set_issue_gps_data && @issue.save
-      @issue.photos.create(url: image_params, user: current_user)
-      redirect_to root_path, success: 'Issue added.'
+      save_photo_and_redirect_to_root
     elsif @issue.save
-      @issue.photos.create(url: image_params, user: current_user)
-      flash[:warning] = 'Could not find GPS data from image. Please select the issue location using the map.'
-      redirect_to edit_issue_path(@issue)
+      save_photo_and_redirect_to_add_gps_data
     else
       render :new
     end
@@ -32,9 +29,7 @@ class IssuesController < ApplicationController
 
   def update
     issue = Issue.find(params[:id])
-    coordinates = params[:coordinates].split
-    latitude = coordinates.first
-    longitude = coordinates.last
+    latitude, longitude = params[:coordinates].split
     issue.update(latitude: latitude, longitude: longitude)
     render :js => "window.location = '#{root_path}'"
   end
@@ -55,5 +50,24 @@ class IssuesController < ApplicationController
         @issue.assign_attributes(latitude: gps_data.latitude, longitude: gps_data.longitude)
         return true
       end
+    end
+
+    def set_issue
+      @issue = Issue.find(params[:id])
+    end
+
+    def add_photo
+      @issue.photos.create(url: image_params, user: current_user)
+    end
+
+    def save_photo_and_redirect_to_root
+      add_photo
+      redirect_to root_path, success: 'Issue added.'
+    end
+
+    def save_photo_and_redirect_to_add_gps_data
+      add_photo
+      flash[:warning] = 'Could not find GPS data from image. Please select the issue location by dragging the blue dot to its location and clicking submit location.'
+      redirect_to edit_issue_path(@issue)
     end
 end
