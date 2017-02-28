@@ -17,19 +17,17 @@ describe 'Create issue' do
         service.directories.create(:key => 'happy-trails')
     end
 
-    context 'valid attributes' do
+    context 'with a photo with gps metadata' do
       it 'adds issue to database', vcr: true do
         expect(Issue.count).to eq 0
         expect(page).to have_content 'Add an Issue'
 
         fill_in 'issue[title]',       with: 'Downed Tree'
         fill_in 'issue[description]', with: 'It is in the middle of the trail.'
-        fill_in 'issue[latitude]',    with: 40.020749
-        fill_in 'issue[longitude]',   with: -105.351165
         select  'Obstacle',           from: 'issue[category]'
         select  'High',               from: 'issue[severity]'
 
-        attach_file "image[]", Rails.root + "spec/fixtures/downed_tree.jpg"
+        attach_file "image[]", Rails.root + "spec/fixtures/test-location.jpg"
 
         click_on 'Submit Issue'
 
@@ -43,8 +41,8 @@ describe 'Create issue' do
         expect(issue.description).to eq 'It is in the middle of the trail.'
         expect(issue.category).to eq 'obstacle'
         expect(issue.severity).to eq 'high'
-        expect(issue.latitude).to eq 40.020749
-        expect(issue.longitude).to eq -105.351165
+        expect(issue.latitude).to eq 39.7507388888889
+        expect(issue.longitude).to eq -104.996880555556
         expect(issue.resolved).to be_falsey
         expect(issue.photos.count).to eq 1
       end
