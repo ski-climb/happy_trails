@@ -57,7 +57,7 @@ function addMap() {
     getPoints(); 
     togglePoints();
     displayRoutes();
-    showIsssue();
+    showIssue();
 
   });
 };
@@ -123,7 +123,7 @@ function addRoute(i, summaryPolyline) {
     });
 };
 
-function showIsssue() {
+function showIssue() {
     $('#map').on("click", ".pin", function(event) {
       var id = this.id.match(/\d+/)[0];
 
