@@ -1,7 +1,6 @@
 var map;
 var latitude = 40;
 var longitude = -105;
-var baseURL = "https://pampered-trails.herokuapp.com/"
 
 $(document).ready(function() {
   if ($('.map-locator').length) {
@@ -147,14 +146,8 @@ function submitLocation() {
     longitude = $('.coordinates').text().split(' ')[1].match(/(\d|\.|-)+/)[0];
     latitude = $('.coordinates').text().split(' ')[2];
     var issueId = $('#issue-id').data().issueId
-
-    console.log(longitude);
-    console.log(latitude);
-    console.log(issueId);
-
-    
     $.ajax({
-      url: baseURL + issueId,
+      url: '/issues/' + issueId,
       type: 'PUT',
       data: "coordinates=" + latitude + ' ' + longitude
     });
