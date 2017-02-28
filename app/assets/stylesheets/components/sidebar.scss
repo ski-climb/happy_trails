@@ -1,4 +1,23 @@
 .sidebar {
-  width: 30%;
+  width: 20%;
   float: right;
+  color: #bbdefb;
+  background-color: #222;
+  height: 4000px;
+  margin-top: -20px;
+  
+  p {
+    font-size: 0.8em;
+  }
+
+  h4 {
+    margin-bottom: 1em;
+  }
+
+  .list-group-item {
+    background-color: #222;
+    border: none;
+  }
+
+
 }
