@@ -51,8 +51,7 @@ function addMap() {
     zoom: 10
   });
 
-  map.addControl(new mapboxgl.NavigationControl());
-  map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
+  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
   map.on('load', function () {
     getPoints(); 
     togglePoints();
