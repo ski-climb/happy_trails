@@ -31,7 +31,7 @@ describe 'Create trail day' do
 
         attributes.each { |name, value| expect(trail_day.send(name)).to eq value }
         expect(current_path).to eq edit_admin_trail_day_path(trail_day)
-        expect(page).to have_content 'Please select the trail day starting location by dragging the blue dot clicking submit location.'
+        expect(page).to have_content 'Please select the trail day starting location by dragging the blue dot and clicking submit location.'
         expect(page).to have_button 'Submit Starting Location'
       end
     end

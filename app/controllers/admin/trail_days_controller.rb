@@ -32,7 +32,7 @@ class Admin::TrailDaysController < ApplicationController
   private
 
     def select_location_flash
-      'Please select the trail day starting location by dragging the blue dot clicking submit location.'
+      'Please select the trail day starting location by dragging the blue dot and clicking submit location.'
     end
 
     def trail_day_params
