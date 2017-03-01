@@ -1,0 +1,9 @@
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <div class="list-group">
+    <div class="list-group-item">
+      <p><%= comment.user_name %> commented on <%= comment.display_date %></p>
+      <h4><%= comment.body %></h4>
+    </div>
+  </div>
+<% end %>

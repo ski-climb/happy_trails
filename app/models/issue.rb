@@ -18,4 +18,16 @@ class Issue < ApplicationRecord
   def resolved_status
     resolved ? "Resolved" : "Open"
   end
+
+  def image_url
+    photos.first ? photos.first.url.url : ""
+  end
+
+  def rounded_latitude
+    latitude ? latitude.round(5) : "Not Recorded"
+  end
+
+  def rounded_longitude
+    longitude ? longitude.round(6) : "Not Recorded"
+  end
 end

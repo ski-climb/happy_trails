@@ -28,4 +28,22 @@ RSpec.describe Comment, type: :model do
       expect(saved_comment.body).to eq comment.body
     end
   end
+
+  describe "#user_name" do
+    let!(:user)  { create(:user, first_name: "chewbacca", last_name: "wookie") }
+    let!(:comment)  { create(:comment, user: user) }
+
+    it "returns the abbreviated name of the user who submitted the comment" do
+      expect(comment.user_name).to eq "Chewbacca W."
+    end
+  end
+
+  describe "#display_date" do
+    let!(:created_at) { DateTime.new(2017,2,3) }
+    let!(:comment) { create(:comment, created_at: created_at) }
+
+    it "returns a nicely formatted date" do
+      expect(comment.display_date).to eq " 3 Feb. 2017"
+    end
+  end
 end

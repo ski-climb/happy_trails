@@ -151,4 +151,53 @@ RSpec.describe Issue, type: :model do
       end
     end
   end
+
+  describe "#image_url" do
+    context "when no photos are present" do
+      let!(:issue_without_photo) { Issue.create(title: "No photo",
+                                                description: "Really no photo",
+                                                severity: "low",
+                                                category: "obstacle")
+      }
+      it "returns an empty string" do
+        expect(issue_without_photo.image_url).to eq ""
+      end
+    end
+  end
+
+  describe "#rounded_latitude" do
+    let!(:issue_without_latitude) { create(:issue, latitude: nil) }
+
+    context "when the issue does not have a latitude" do
+      it "returns 'Not Recorded'" do
+        expect(issue_without_latitude.rounded_latitude).to eq "Not Recorded"
+      end
+    end
+
+    let!(:issue_with_latitude) { create(:issue, latitude: -12.345) }
+
+    context "when the issue does have a latitude" do
+      it "returns the latitude rounded to 5 digits" do
+        expect(issue_with_latitude.rounded_latitude).to eq -12.345
+      end
+    end
+  end
+
+  describe "#rounded_longitude" do
+    let!(:issue_without_longitude) { create(:issue, longitude: nil) }
+
+    context "when the issue does not have a longitude" do
+      it "returns 'Not Recorded'" do
+        expect(issue_without_longitude.rounded_longitude).to eq "Not Recorded"
+      end
+    end
+
+    let!(:issue_with_longitude) { create(:issue, longitude: 123.456) }
+
+    context "when the issue does have a longitude" do
+      it "returns the longitude rounded to 6 digits" do
+        expect(issue_with_longitude.rounded_longitude).to eq 123.456
+      end
+    end
+  end
 end

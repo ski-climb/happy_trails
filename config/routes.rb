@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get '/auth/strava/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources 'issues', only: [:index, :new, :create, :show, :update, :edit]
+  resources :issues, except: [:delete] do
+    resources :comments, only: [:create]
+  end
 
   namespace :admin do
     resources :trail_days, only: [:new, :create, :edit, :show, :update] do

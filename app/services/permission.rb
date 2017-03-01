@@ -29,6 +29,7 @@ class Permission
       return true if permitted_for_guest?
       return true if controller == 'sessions' && action.in?(%w(destroy))
       return true if controller == 'issues'   && action.in?(%w(new create update edit))
+      return true if controller == 'comments'   && action.in?(%w(create))
     end
 
     def permitted_for_guest?
