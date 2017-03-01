@@ -10,7 +10,7 @@
       <p class="list-group-item-text">Participants:</p>
       <h4 class="list-group-item-heading"><%= @trail_day.participant_email_addresses %></h4>
       <p class="list-group-item-text">Starting Location Coordinates:</p>
-      <h4 class="list-group-item-heading">(<%= @trail_day.latitude.round(4) %>, <%= @trail_day.longitude.round(4) %>)</h4>
+      <h4 class="list-group-item-heading">(<%= @trail_day.rounded_latitude %>, <%= @trail_day.rounded_longitude %>)</h4>
     </div>
   </div>
 

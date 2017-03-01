@@ -12,8 +12,8 @@ describe 'Show issue' do
       expect(page).to have_content trail_day.formatted_start_time
       expect(page).to have_content trail_day.duration_in_hours
       expect(page).to have_content trail_day.participant_email_addresses
-      expect(page).to have_content trail_day.latitude.round(4)
-      expect(page).to have_content trail_day.longitude.round(4)
+      expect(page).to have_content trail_day.rounded_latitude
+      expect(page).to have_content trail_day.rounded_longitude
       expect(page).to have_button 'Email Invitation to Participants'
     end
   end
