@@ -1,0 +1,12 @@
+<%= content_for(:mapbox) do %>
+  <%= javascript_include_tag 'https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js' %>
+<% end %>
+
+<div id='map' class='map-trail-day-locator' data-env=<%= ENV["MAPBOX_ACCESS_TOKEN"] %>>
+   <nav id="submit-starting-location" class="submit-starting-location">
+    <button id="submit-starting-location">Submit Starting Location</button>
+  </nav>
+</div>
+
+<article id='trail-day-id' data-trail-day-id= <%= @trail_day.id %> >
+<pre id='coordinates' class='coordinates'></pre>
