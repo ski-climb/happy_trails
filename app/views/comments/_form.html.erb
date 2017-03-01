@@ -1,0 +1,5 @@
+<h3>Comment on this issue</h3>
+<%= simple_form_for([@issue, @comment]) do |f| %>
+  <%= f.input :body, label: false, placeholder: 'Please enter your comment here' %>
+  <%= f.submit 'Submit Comment', class: 'btn btn-default' %>
+<% end %>
