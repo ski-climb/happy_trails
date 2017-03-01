@@ -4,7 +4,7 @@
 
   <%= simple_form_for [:admin, @trail_day] do |f| %>
     <p>Participant Email Addresses</p>
-    <%= f.input :participant_email_addresses, placeholder: 'name@example.com, name2@example.com,...', label: false %>
+    <%= f.input :participant_email_addresses, placeholder: 'name@example.com name2@example.com,...', label: false %>
     <p>Duration (in hours)</p>
     <%= f.input :duration_in_hours, label: false, prompt: 'Duration in Hours' %>
     <p>Start Time</p>
