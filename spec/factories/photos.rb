@@ -4,6 +4,6 @@ FactoryGirl.define do
     comment
     issue
     admin nil
-    url   nil
+    image   nil
   end
 end
