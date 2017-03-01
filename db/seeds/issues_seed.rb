@@ -16,7 +16,7 @@ class IssuesSeed
     )
 
     issue_1.photos.create!( user: issue_1.user,
-                            url:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
+                            image:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
                           )
 
     issue_2 = Issue.create!(
@@ -30,7 +30,7 @@ class IssuesSeed
     )
 
     issue_2.photos.create!( user: issue_2.user,
-                            url:  Rails.root.join('spec/fixtures/flooded_trail.jpg').open
+                            image:  Rails.root.join('spec/fixtures/flooded_trail.jpg').open
                           )
 
     issue_3 = Issue.create!(
@@ -44,7 +44,7 @@ class IssuesSeed
     )
 
     issue_3.photos.create!( user: issue_3.user,
-                            url:  Rails.root.join('spec/fixtures/peregrine.jpg').open
+                            image:  Rails.root.join('spec/fixtures/peregrine.jpg').open
                           )
 
     issue_4 = Issue.create!(
@@ -59,7 +59,7 @@ class IssuesSeed
     )
 
     issue_4.photos.create!( user: issue_4.user,
-                            url:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
+                            image:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
                           )
 
     issue_5 = Issue.create!(
@@ -74,7 +74,7 @@ class IssuesSeed
     )
 
     issue_5.photos.create!( user: issue_5.user,
-                            url:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
+                            image:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
                           )
 
     issue_6 = Issue.create!(
@@ -88,7 +88,7 @@ class IssuesSeed
     )
 
     issue_6.photos.create!( user: issue_6.user,
-                            url:  Rails.root.join('spec/fixtures/flooded_trail.jpg').open
+                            image:  Rails.root.join('spec/fixtures/flooded_trail.jpg').open
                           )
 
     issue_7 = Issue.create!(
@@ -102,7 +102,7 @@ class IssuesSeed
     )
 
     issue_7.photos.create!( user: issue_7.user,
-                            url:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
+                            image:  Rails.root.join('spec/fixtures/downed_tree.jpg').open
                           )
 
     issue_8 = Issue.create!(
@@ -116,7 +116,7 @@ class IssuesSeed
     )
 
     issue_8.photos.create!( user: issue_8.user,
-                            url:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
+                            image:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
                           )
 
     issue_9 = Issue.create!(
@@ -130,7 +130,7 @@ class IssuesSeed
     )
 
     issue_9.photos.create!( user: issue_9.user,
-                            url:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
+                            image:  Rails.root.join('spec/fixtures/bridge_damaged_on_trail.jpg').open
                           )
 
     issue_10 = Issue.create!(
@@ -144,7 +144,7 @@ class IssuesSeed
     )
 
     issue_10.photos.create!( user: issue_10.user,
-                             url:  Rails.root.join('spec/fixtures/boulder_on_trail.jpg').open
+                             image:  Rails.root.join('spec/fixtures/boulder_on_trail.jpg').open
                            )
   end
 end
