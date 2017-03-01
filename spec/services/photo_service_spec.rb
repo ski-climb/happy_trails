@@ -7,9 +7,11 @@ describe 'Photo service' do
   let(:service) { PhotoService.new(nil, issue, user) }
 
   context '.new' do
-    it 'initializes with attribute' do
+    it 'adds a photo when initialized' do
 
       expect(service).to be_a PhotoService
+      expect(issue.photos.count).to eq 1
+      expect(user.photos.count).to eq 1
     end
   end
 
