@@ -6,7 +6,7 @@ RSpec.describe Photo, type: :model do
     it { is_expected.to have_db_column :user_id }
     it { is_expected.to have_db_column :admin_id }
     it { is_expected.to have_db_column :issue_id }
-    it { is_expected.to have_db_column :url }
+    it { is_expected.to have_db_column :image }
   end
 
   context 'validations' do
