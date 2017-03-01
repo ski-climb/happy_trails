@@ -6,13 +6,13 @@
 
 Nick Erhardt and Kyle Heppenstall created Happy Trails to empower the community of trail users to log trailwork needs and organzize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a users desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
 
-Tech stack: Ruby, Rails, PostgreSQL, Strava API, RSpec, JQuery, S3, Capybara, CarrierWave, Sass
+Tech stack: Ruby, Rails, PostgreSQL, Mapbox API, Strava API, RSpec, JQuery, S3, Capybara, CarrierWave, Sass
 
 Developers: [Kyle Heppenstall](https://www.turing.io/alumni/kyle-heppenstall), [Nick Erhardt](https://www.turing.io/alumni/nicholas-erhardt)
 
 ### Dependencies 
 
-This project uses Ruby version 2.3+ with a PostgreSQL database. Images are stored in a S3 bucket. Users are authenticated using Strava Oauth.
+This application uses Ruby version 2.3+ with a PostgreSQL database. Our map is rendered using the MapBox API. Images are stored in a S3 bucket. Users are authenticated using Strava Oauth.
 
 ### Getting Started
 
