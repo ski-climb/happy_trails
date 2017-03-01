@@ -45,9 +45,11 @@ One challenged we faced was dealing with all the different logic of creating an 
 
 ![Sloppy Issues Controller](https://cloud.githubusercontent.com/assets/16868275/23441507/01ed8380-fde0-11e6-87cf-163e890e5239.png)
 
-To reduce the complexity of these methods we decided to create a photo service and push the logic there. The service then served the purpose of adding the photo to the database and providing us with the correct redirect path and flash message based  the presence of the gps metadata on the photo. After the extraction of the service, the three controller methods above turned into one concise create action in the controller (see below). Checkout out `photo_service.rb` to see the details of how we did it.
+To reduce the complexity of these methods we decided to create a photo service and push the logic there. The service then served the purpose of adding the photo to the database and providing us with the correct redirect path and flash message based  the presence of the gps metadata on the photo. After the extraction of the service, the three controller methods above turned into one concise create action in the controller:
 
 ![Cleaner Issues Controller](https://cloud.githubusercontent.com/assets/16868275/23441767/991f4350-fde1-11e6-928e-6a03d0a1d957.png)
+
+![Photo Service](https://cloud.githubusercontent.com/assets/16868275/23441813/e460ac6e-fde1-11e6-99ae-d5e349edf1a2.png)
 
 #### Toggling Issues by Type on the Map
 
