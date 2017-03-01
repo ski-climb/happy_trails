@@ -4,11 +4,11 @@ var longitude = -105;
 
 $(document).ready(function() {
   if ($('.map-trail-day-locator').length) {
-    addLocator();
+    addTrailDayLocator();
   }
 });
 
-function addLocator() { 
+function addTrailDayLocator() { 
   mapboxgl.accessToken = 'pk.eyJ1IjoibmJlMTA1IiwiYSI6ImNpemVrMTVqZDIxZmQzM3A5d3dycmt2dDQifQ.aFcLtyBqOJY3-V-4B-9MKg';
   map = new mapboxgl.Map({
     container: 'map',
@@ -21,7 +21,7 @@ function addLocator() {
   map.addControl(new mapboxgl.GeolocateControl(), 'top-left');
   map.on('load', function () {
     displayRoutes();
-    submitLocation();
+    submitTrailDayLocation();
 
     // Holds mousedown state for events. if this
     // flag is active, we move the point on `mousemove`.
@@ -140,7 +140,7 @@ function addLocator() {
   });
 };
 
-function submitLocation() {
+function submitTrailDayLocation() {
   $('#submit-starting-location').on("click", function(event) {
     event.preventDefault();
     longitude = $('.coordinates').text().split(' ')[1].match(/(\d|\.|-)+/)[0];
