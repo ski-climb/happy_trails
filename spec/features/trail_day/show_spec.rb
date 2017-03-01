@@ -14,7 +14,7 @@ describe 'Show issue' do
       expect(page).to have_content trail_day.participant_email_addresses
       expect(page).to have_content trail_day.latitude.round(4)
       expect(page).to have_content trail_day.longitude.round(4)
-      expect(page).to have_link 'Email Participants'
+      expect(page).to have_button 'Email Invitation to Participants'
     end
   end
 
