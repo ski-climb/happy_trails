@@ -41,6 +41,6 @@ class Admin::TrailDaysController < ApplicationController
     end
 
     def set_trail_day
-       @trail_day = TrailDay.find(params[:id])
+      @trail_day = TrailDay.find(params[:id])
     end
 end
