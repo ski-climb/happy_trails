@@ -14,8 +14,8 @@ describe "viewing an individual issue" do
       expect(page).to have_content issue.description
       expect(page).to have_content issue.category.capitalize
       expect(page).to have_content issue.severity.capitalize
-      expect(page).to have_content issue.latitude.to_s[0..9]
-      expect(page).to have_content issue.longitude.to_s[0..9]
+      expect(page).to have_content issue.latitude.to_s[0..5]
+      expect(page).to have_content issue.longitude.to_s[0..6]
       expect(page).to have_content issue.resolved_status
 
       # A very ugly way of checking if the image appears on the page
