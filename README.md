@@ -45,6 +45,7 @@ One challenged we faced was dealing with all the different logic of creating an 
 
 To reduce the complexity of these methods we decided to create a photo service and push the logic there. The service then served the purpose of adding the photo to the database and providing us with the correct redirect path and flash message based  the presence of the gps metadata on the photo. After the extraction of the service, the three controller methods above turned into one concise create action in the controller (see below). Checkout out `photo_service.rb` to see the details of how we did it.
 
+![Cleaner Issues Controller](https://cloud.githubusercontent.com/assets/16868275/23441524/1363b01c-fde0-11e6-87de-3ad004c31b2f.png)
 
 #### Toggling Issues by Type on the Map
 
