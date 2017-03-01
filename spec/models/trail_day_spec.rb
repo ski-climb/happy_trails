@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe TrailDay, type: :model do
+
+  let(:trail_day) { create(:trail_day) }
+
   context 'database columns' do
     it { is_expected.to have_db_column :start_time }
     it { is_expected.to have_db_column :participant_email_addresses }
@@ -23,6 +26,14 @@ RSpec.describe TrailDay, type: :model do
 
       expect(TrailDay.count).to eq 1
       expect(saved_trail_day.description).to eq trail_day.description
+    end
+  end
+
+  context '#formatted_start_time' do
+    it 'returns readable start time' do
+      expected = trail_day.start_time.strftime("%A, %e %b %Y %l:%M %p")
+
+      expect(trail_day.formatted_start_time).to eq expected
     end
   end
 end

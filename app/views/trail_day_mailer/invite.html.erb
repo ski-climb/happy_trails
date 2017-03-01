@@ -1,10 +1,6 @@
 Thanks for signing up to volunteer at a Happy Trails trail day!
-
-Start Time: <%= @trail_day.start_time.inspect %>
-
+Start Time: <%= @trail_day.formatted_start_time %>
 Duration: <%= @trail_day.duration_in_hours %> hours
-
 Location: (<%= @trail_day.latitude.round(4) %>, <%= @trail_day.longitude.round(4) %>)
-
 What you will be doing:
 <%= @trail_day.description %>

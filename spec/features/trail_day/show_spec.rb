@@ -9,7 +9,7 @@ describe 'Show issue' do
       logged_in_admin
       visit admin_trail_day_path(trail_day)
 
-      expect(page).to have_content trail_day.start_time.inspect
+      expect(page).to have_content trail_day.formatted_start_time
       expect(page).to have_content trail_day.duration_in_hours
       expect(page).to have_content trail_day.participant_email_addresses
       expect(page).to have_content trail_day.latitude.round(4)
