@@ -29,14 +29,14 @@ class PhotoService
     end
 
     def set_issue_gps_data
-      if image && gps_data = EXIFR::JPEG.new(@image.open).gps
+      if image && gps_data = EXIFR::JPEG.new(image.open).gps
         issue.update(latitude: gps_data.latitude, longitude: gps_data.longitude)
         return true
       end
     end
 
     def unsuccessful_warning
-      'Could not find GPS data from image. Please select the issue location
-      by dragging the blue dot to its location and clicking submit location.'
+      'Could not find GPS data from image.
+      Please select the issue location by dragging the blue dot to its location and clicking submit location.'
     end
 end
