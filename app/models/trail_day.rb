@@ -1,0 +1,2 @@
+class TrailDay < ApplicationRecord
+end
