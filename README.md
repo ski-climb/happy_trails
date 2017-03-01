@@ -1,24 +1,50 @@
-# README
+## Happy Trails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Production Site](https://pampered-trails.herokuapp.com/)
 
-Things you may want to cover:
+### Description
 
-* Ruby version
+The goal of Happy Trails is to empower the community of trail users to log trailwork needs and organzize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a users desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
 
-* System dependencies
+Tech stack: Ruby, Rails, PostgreSQL, Strava API, RSpec, JQuery, S3, Capybara, CarrierWave, Sass
 
-* Configuration
+### Dependencies 
 
-* Database creation
+This project uses Ruby version 2.3+ with a PostgreSQL database. Images are stored in a S3 bucket. Users are authenticated using Strava Oauth.
 
-* Database initialization
+### Getting Started
 
-* How to run the test suite
+Follow these steps in your terminal to clone the project on to your local machine and import the data.
 
-* Services (job queues, cache servers, search engines, etc.)
+  1. `cd` into the directory where you want the project in the terminal.
+  1. Run `git clone https://github.com/ski-climb/happy_trails.git`
+  1. `cd happy_trails` 
+  1. `bundle` to install the gems you need
+  1. `rake db:create` to create your PostgreSQL database
+  1. `rake db:seed` to import stock data
 
-* Deployment instructions
+### Test suite
 
-* ...
+Follow these steps in your terminal to run our test suite and check out the coverage.
+
+  1. `rspec` to run the test suite
+
+### Hosting the site locally
+
+  1. From within the `happy_trails` directory run `rails server` to start the server locally.
+  1. In your browser visit http://localhost:3000/
+  1. Press `ctrl-c` to stop server.
+
+### Development Challenges
+
+#### Complex Logic in the Issues Controller
+
+#### Toggling Issues by Type on the Map
+
+
+### API Endpoints
+
+
+To see all issues visit :`GET /api/v1/models/issues`
+
+To see the polylines for a user's recent Strava routes visit : `GET /api/v1/users/:id/recent_routes`
