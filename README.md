@@ -52,7 +52,7 @@ To reduce the complexity of these methods we decided to create a photo service a
 
 ### API Endpoints
 
+To render issues or Strava routes on the map we hit our own API with AJAX requests. The two endpoints we created are detailed here:
 
-To see all issues visit :`GET /api/v1/models/issues`
-
-To see the polylines for a user's recent Strava routes visit : `GET /api/v1/users/:id/recent_routes`
+* To see all issues visit :`GET /api/v1/models/issues`
+* To see the polylines for a user's recent Strava routes visit : `GET /api/v1/users/:id/recent_routes`
