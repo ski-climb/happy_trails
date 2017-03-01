@@ -11,7 +11,6 @@ RSpec.describe TrailDay, type: :model do
   end
 
   context 'validations' do
-    it { is_expected.to validate_presence_of :start_time }
     it { is_expected.to validate_presence_of :participant_email_addresses }
     it { is_expected.to validate_presence_of :duration_in_hours }
     it { is_expected.to validate_presence_of :description }
