@@ -1,0 +1,16 @@
+<div class='trail-day-form'>
+
+  <h2>Add a Trail Day</h2>
+
+  <%= simple_form_for [:admin, @trail_day] do |f| %>
+    <p>Participant Email Addresses</p>
+    <%= f.input :participant_email_addresses, placeholder: 'name@example.com name2@example.com,...', label: false %>
+    <p>Duration (in hours)</p>
+    <%= f.input :duration_in_hours, label: false, prompt: 'Duration in Hours' %>
+    <p>Start Time</p>
+    <%= f.input :start_time, label: false %>
+    <p>Description</p>
+    <%= f.input :description, placeholder: 'Describe the work you will be doing and any details participants will need.', label: false %>
+    <%= f.submit 'Move on to select the location', class: 'btn btn-default' %>
+  <% end %>
+</div>

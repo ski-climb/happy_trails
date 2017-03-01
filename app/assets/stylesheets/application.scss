@@ -7,9 +7,12 @@
 @import "skeleton";
 @import "components/nav";
 @import "components/map_issues";
-@import "sections/map_locator";
 @import "components/sidebar";
+@import "sections/map_locator";
+@import "sections/trail_day_locator";
 @import "sections/issue-form";
+@import "sections/trail_day_form";
+@import "sections/trail_day_show";
 @import "sections/issue-show";
 @import "sections/admin-login";
 @import "media_queries";

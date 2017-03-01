@@ -27,6 +27,11 @@
           <%= link_to 'Login with Strava', '/auth/strava' %>
         </li>
       <% end %>
+      <% if current_admin %>
+        <li>
+          <%= link_to 'Add a Trail Day', new_admin_trail_day_path %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

@@ -20,6 +20,8 @@ class Permission
     attr_reader :person, :controller, :action
 
     def permitted_for_admin?
+      return true if controller == 'admin/trail_days' && action.in?(%w(new create edit update show))
+      return true if controller == 'admin/invitation' && action.in?(%w(create))
       return true if permitted_for_user?
     end
 

@@ -4,6 +4,12 @@ def logged_in_user
   user
 end
 
+def logged_in_admin
+  admin = create(:admin)
+  allow_any_instance_of(ApplicationController).to receive(:current_admin).and_return(admin)
+  admin
+end
+
 def set_session
   user = create(:user)
   page.set_rack_session(user_id: user.id)

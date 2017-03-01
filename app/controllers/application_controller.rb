@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :info, :warning, :danger
   helper_method :current_user,
                 :current_user?,
-                :current_person
+                :current_person,
+                :current_admin
   before_action :authorize!
 
   def current_user?

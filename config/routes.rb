@@ -8,8 +8,13 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  get '/admin/login',  to: 'admin/sessions#new'
-  post '/admin/login', to: 'admin/sessions#create'
+  namespace :admin do
+    resources :trail_days, only: [:new, :create, :edit, :show, :update] do
+      post '/invite', to: 'invitation#create'
+    end
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+  end
 
   namespace :api do
     namespace :v1 do

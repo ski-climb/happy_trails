@@ -1,0 +1,18 @@
+ <div class='trail-day-show'>
+
+  <div class="list-group">
+    <div class="list-group-item">
+      <h1 class="list-group-item-heading"><%= @trail_day.formatted_start_time %></h1>
+      <p><%= @trail_day.description %></p>
+      <hr />
+      <p class="list-group-item-text">Duration (hours):</p>
+      <h4 class="list-group-item-heading"><%= @trail_day.duration_in_hours %></h4>
+      <p class="list-group-item-text">Participants:</p>
+      <h4 class="list-group-item-heading"><%= @trail_day.participant_email_addresses %></h4>
+      <p class="list-group-item-text">Starting Location Coordinates:</p>
+      <h4 class="list-group-item-heading">(<%= @trail_day.rounded_latitude %>, <%= @trail_day.rounded_longitude %>)</h4>
+    </div>
+  </div>
+
+  <%= button_to 'Email Invitation to Participants', admin_trail_day_invite_path(@trail_day) %>
+</div>
