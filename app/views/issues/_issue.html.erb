@@ -1,7 +1,7 @@
 <div class="list-group">
   <%= link_to issue_path(@issue) do %>
     <div class="list-group-item">
-      <%= image_tag @issue.photos.first.url.url, class: "img-responsive center-block img-rounded", alt: @issue.title %>
+      <%= image_tag @issue.image_url, class: "img-responsive center-block img-rounded", alt: @issue.title %>
     </div>
   <% end %>
   <div class="list-group-item">
@@ -15,7 +15,7 @@
     <p class="list-group-item-text">Severity:</p>
     <h4 class="list-group-item-heading"><%= @issue.severity.capitalize %></h4>
     <p class="list-group-item-text">Coordinates:</p>
-    <h4 class="list-group-item-heading">(<%= @issue.latitude.round(4) %>, <%= @issue.longitude.round(4) %>)</h4>
+    <h4 class="list-group-item-heading">(<%= @issue.rounded_latitude %>, <%= @issue.rounded_longitude %>)</h4>
     <p class="list-group-item-text">Status:</p>
     <h4 class="list-group-item-heading"><%= @issue.resolved_status %></h4>
   </div>
