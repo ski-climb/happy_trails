@@ -4,9 +4,11 @@
 
 ### Description
 
-The goal of Happy Trails is to empower the community of trail users to log trailwork needs and organzize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a users desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
+Nick Erhardt and Kyle Heppenstall created Happy Trails to empower the community of trail users to log trailwork needs and organzize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a users desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
 
 Tech stack: Ruby, Rails, PostgreSQL, Strava API, RSpec, JQuery, S3, Capybara, CarrierWave, Sass
+
+Developers: [Kyle Heppenstall](https://www.turing.io/alumni/kyle-heppenstall), [Nick Erhardt](https://www.turing.io/alumni/nicholas-erhardt)
 
 ### Dependencies 
 
@@ -35,7 +37,7 @@ Follow these steps in your terminal to run our test suite and check out the cove
   1. In your browser visit http://localhost:3000/
   1. Press `ctrl-c` to stop server.
 
-### Development Challenges
+### Technical Challenges
 
 #### Complex Logic in the Issues Controller
 
