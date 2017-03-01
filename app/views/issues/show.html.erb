@@ -1,3 +1,7 @@
 <section class="wrapper">
   <%= render partial: 'issue' %>
+  <% if current_user? %>
+    <%= render partial: '/comments/index' if @issue.comments.any? %>
+    <%= render partial: '/comments/form' %>
+  <% end %>
 </section>
