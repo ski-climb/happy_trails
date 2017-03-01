@@ -19,7 +19,7 @@ describe "viewing an individual issue" do
       expect(page).to have_content issue.resolved_status
 
       # A very ugly way of checking if the image appears on the page
-      expect(page).to have_xpath("//img[@src=\"#{issue.photos.first.url.url}\"]")
+      expect(page).to have_xpath("//img[@src=\"#{issue.image_url}\"]")
     end
   end
 end

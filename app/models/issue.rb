@@ -20,7 +20,7 @@ class Issue < ApplicationRecord
   end
 
   def image_url
-    photos.first ? photos.first.url.url : ""
+    photos.first ? photos.first.image.url : ""
   end
 
   def rounded_latitude
