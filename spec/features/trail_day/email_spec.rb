@@ -7,10 +7,7 @@ describe 'Email participants of a trail day' do
       logged_in_admin
       visit admin_trail_day_path(trail_day)
 
-      click_on 'Email Invitation to Participants'
-
-      expect(page).to have_content 'Invitation emails sent!'
-      expect(current_path).to eq admin_trail_day_path(trail_day)
+      expect(page).to have_button 'Email Invitation to Participants'
     end 
   end
 end
