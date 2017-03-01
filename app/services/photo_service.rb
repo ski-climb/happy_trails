@@ -15,7 +15,7 @@ class PhotoService
     attr_reader :image, :user, :issue
 
     def add_photo
-      issue.photos.create(url: image, user: user)
+      issue.photos.create(image: image, user: user)
     end
 
     def set_path_and_flash
