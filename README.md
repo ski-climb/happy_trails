@@ -75,6 +75,7 @@ What could be simpler.
 To refresh, the browser makes an AJAX call to our application server, which then queries the Strava API, which returns the most recent routes for the user (including polyline data), which is passed back to the user's browser, which is decoded from a polyline to lat/lon coordinates, which are then plotted on the map to display the routes.
 
 This is what the routes look like once added to the map:
+
 ![Strava Routes](https://cloud.githubusercontent.com/assets/19230981/23526382/163524ea-ff4f-11e6-8369-326a7150959c.png)
 
 ### API Endpoints
