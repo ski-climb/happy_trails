@@ -11,7 +11,7 @@ $font-duke: 'Duke', sans-serif;
 
 @font-face {
     font-family: 'Duke';
-    src: url('duke.otf')  format('truetype');
+    src: font-url('duke.otf')  format('truetype');
     font-weight: normal;
     font-style: normal;
 }
