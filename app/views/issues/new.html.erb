@@ -1,4 +1,6 @@
 <main class='issue-form'>
   <h2>Add an Issue</h2>
-  <%= render partial: 'form' %>
+  <%= cache do %>
+    <%= render partial: 'form' %>
+  <% end %>
 </main>
