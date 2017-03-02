@@ -60,6 +60,23 @@ To reduce the complexity of these methods we decided to create a photo service a
 
 ![Photo Service](https://cloud.githubusercontent.com/assets/16868275/23441813/e460ac6e-fde1-11e6-99ae-d5e349edf1a2.png)
 
+#### Displaying a User's most recent Strava Routes
+
+One fascinating aspect of this project was learning how to retrieve and plot the user's Strava routes on the map.
+
+The process went a little like this: user logs in (via Strava), the application loads the map on the client side and then makes an AJAX request back to the application server.  The server in turn queries  Strava's API to get the user's most recent routes.  Part of the response from Strava includes polylines of the routes.
+
+A polyline is a string representation of a number of paired lat/lon coordinates which have been encoded and looks like this: *_p~iF~ps|U_ulLnnqC_mqNvxq@*.  No, the dog did not just walk across my keyboard.  The above polyline can represent a complex path via a series of lat/lon coordinates but is comprised of fewer characters than this sentence - which makes it a convenient way to pass GPS data from our server to the client's browser.
+
+Once the browser has a list of polylines, we decode the polyline back into paired lat/lon points and plot those points to form a line on the map.
+
+What could be simpler.
+
+To refresh, the browser makes an AJAX call to our application server, which then queries the Strava API, which returns the most recent routes for the user (including polyline data), which is passed back to the user's browser, which is decoded from a polyline to lat/lon coordinates, which are then plotted on the map to display the routes.
+
+This is what the routes look like once added to the map:
+![Strava Routes](https://cloud.githubusercontent.com/assets/19230981/23526382/163524ea-ff4f-11e6-8369-326a7150959c.png)
+
 ### API Endpoints
 
 To render issues or Strava routes on the map we hit our own API with AJAX requests. The two endpoints we created are detailed here:
