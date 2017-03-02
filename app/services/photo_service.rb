@@ -29,7 +29,7 @@ class PhotoService
     end
 
     def set_issue_gps_data
-      if image && gps_data = EXIFR::JPEG.new(image.open).gps
+      if image && gps_data = EXIFR::JPEG.new(image.open).gps rescue nil
         issue.update(latitude: gps_data.latitude, longitude: gps_data.longitude)
         return true
       end
