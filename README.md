@@ -12,7 +12,7 @@ Developers: [Kyle Heppenstall](https://www.turing.io/alumni/kyle-heppenstall), [
 
 Tech stack: Ruby, Rails, PostgreSQL, Mapbox API, Strava API, Travis CI, Redis, Sidekiq, Skylight, Heroku, RSpec, JQuery, AWS (S3), Capybara, CarrierWave, Sass
 
-* Ruby on rails application backed by a PostgreSQL database and deployed on Heroku
+* Ruby on Rails application backed by a PostgreSQL database and deployed on Heroku
 * Maps pulled in from Mapbox
 * OAuth with Strava and display a user's routes with Strava API
 * Travis CI for continuous integration
