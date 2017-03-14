@@ -4,7 +4,7 @@
 
 ### Description
 
-Nick Erhardt and Kyle Heppenstall created Happy Trails to empower the community of trail users to log trailwork needs and organzize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a user's desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
+Nick Erhardt and Kyle Heppenstall created Happy Trails to empower the community of trail users to log trailwork needs and organize to work on trails. Guest visitors can see trailwork requests on an interactive map and toggle the requests based on status. Once logged in with Strava, a user can see his/her Strava routes and can add an issue. GPS data for issues is added using metadata from the photos or by dragging a marker to a user's desired location. Users can comment on issues and administrators can add work days to automatically email participants with the time, location, and details of the day.
 
 Developers: [Kyle Heppenstall](https://www.turing.io/alumni/kyle-heppenstall), [Nick Erhardt](https://www.turing.io/alumni/nicholas-erhardt)
 
