@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
+    cookies[:id] = nil
     redirect_to root_path, info: 'You are now logged out.'
   end
 
