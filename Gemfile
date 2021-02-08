@@ -30,7 +30,7 @@ gem "omniauth-strava"
 
 gem 'factory_girl_rails'
 gem 'faker'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'fog'
 gem 'mini_magick' 
 gem 'exifr'
